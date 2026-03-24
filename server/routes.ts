@@ -3,16 +3,22 @@ import type { Server } from "http";
 import { runRecon } from "./recon-runner";
 import { getDefaultSelectedProviderIds, isKnownProviderId, sanitizeSelectedProviderIds } from "@shared/osint-providers";
 import { createRunningSpiderfootProviderResult, getSpiderfootJob, startSpiderfootJob } from "./spiderfoot-jobs";
+import { createRunningSherlockProviderResult, getSherlockJob, startSherlockJob } from "./sherlock-jobs";
 
-export function splitSpiderfootSelection(selectedSources: string[]): {
+export function splitBackgroundSelection(selectedSources: string[]): {
   inlineSources: string[];
-  backgroundProviderId: "spiderfoot" | "spiderfoot_deep" | null;
+  backgroundProviderIds: Array<"spiderfoot" | "spiderfoot_deep" | "sherlock">;
 } {
   const hasDeep = selectedSources.includes("spiderfoot_deep");
   const hasSpiderfoot = selectedSources.includes("spiderfoot");
+  const hasSherlock = selectedSources.includes("sherlock");
+  const backgroundProviderIds: Array<"spiderfoot" | "spiderfoot_deep" | "sherlock"> = [];
+  if (hasDeep) backgroundProviderIds.push("spiderfoot_deep");
+  else if (hasSpiderfoot) backgroundProviderIds.push("spiderfoot");
+  if (hasSherlock) backgroundProviderIds.push("sherlock");
   return {
-    inlineSources: selectedSources.filter((source) => source !== "spiderfoot" && source !== "spiderfoot_deep"),
-    backgroundProviderId: hasDeep ? "spiderfoot_deep" : hasSpiderfoot ? "spiderfoot" : null,
+    inlineSources: selectedSources.filter((source) => source !== "spiderfoot" && source !== "spiderfoot_deep" && source !== "sherlock"),
+    backgroundProviderIds,
   };
 }
 
@@ -88,6 +94,36 @@ export async function attachSpiderfootBackgroundScan(
   }
 }
 
+export async function attachSherlockBackgroundScan(
+  report: Record<string, any>,
+  companyName: string,
+  startJob: typeof startSherlockJob = startSherlockJob,
+): Promise<void> {
+  report.provider_results = report.provider_results || {};
+
+  try {
+    const job = await startJob({ companyName });
+    report.provider_results.sherlock = createRunningSherlockProviderResult();
+    const jobSummary = {
+      job_id: job.job_id,
+      provider_id: job.provider_id,
+      scan_id: job.scan_id,
+      status: job.status,
+      started_at: job.started_at,
+    };
+    report.sherlock_job = jobSummary;
+    report.background_jobs = [...(report.background_jobs || []), jobSummary];
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown Sherlock startup failure";
+    report.provider_results.sherlock = {
+      ...createRunningSherlockProviderResult(),
+      status: "error",
+      notes: [`Sherlock startup failed: ${message}`],
+      progress_logs: [],
+    };
+  }
+}
+
 export async function registerRoutes(_httpServer: Server, app: Express): Promise<void> {
   // POST /api/recon — run the Python OSINT engine
   app.post("/api/recon", async (req, res) => {
@@ -104,15 +140,25 @@ export async function registerRoutes(_httpServer: Server, app: Express): Promise
 
     try {
       const effectiveSelectedSources = selectedSources.length > 0 ? selectedSources : getDefaultSelectedProviderIds();
-      const { inlineSources, backgroundProviderId } = splitSpiderfootSelection(effectiveSelectedSources);
+      const { inlineSources, backgroundProviderIds } = splitBackgroundSelection(effectiveSelectedSources);
       const result = await runRecon({
         companyName,
         selectedSources: inlineSources,
       });
       const report = result.data as Record<string, any>;
 
-      if (backgroundProviderId) {
+      for (const backgroundProviderId of backgroundProviderIds) {
+        if (backgroundProviderId === "sherlock") {
+          await attachSherlockBackgroundScan(report, companyName);
+          continue;
+        }
         await attachSpiderfootBackgroundScan(report, companyName, backgroundProviderId);
+        if (!report.background_jobs) {
+          report.background_jobs = [];
+        }
+        if (report.spiderfoot_job) {
+          report.background_jobs.push(report.spiderfoot_job);
+        }
       }
 
       return res.json({ success: true, ...result });
@@ -123,9 +169,9 @@ export async function registerRoutes(_httpServer: Server, app: Express): Promise
   });
 
   app.get("/api/recon/jobs/:jobId", (req, res) => {
-    const job = getSpiderfootJob(req.params.jobId);
+    const job = getSpiderfootJob(req.params.jobId) || getSherlockJob(req.params.jobId);
     if (!job) {
-      return res.status(404).json({ error: "SpiderFoot job not found" });
+      return res.status(404).json({ error: "Background job not found" });
     }
 
     return res.json({
@@ -133,7 +179,7 @@ export async function registerRoutes(_httpServer: Server, app: Express): Promise
       job: {
         job_id: job.job_id,
         provider_id: job.provider_id,
-        scan_id: job.scan_id,
+        scan_id: "scan_id" in job ? job.scan_id : undefined,
         company_name: job.company_name,
         status: job.status,
         started_at: job.started_at,

@@ -3,6 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { cleanImpersonationCandidates, type IdentityCandidate } from "@/lib/impersonation-candidates";
 import { normalizeIdentityData } from "@/lib/identity-normalization";
+import { buildCanonicalIdentitiesFromProviders } from "@/lib/identity-union";
 import { useToast } from "@/hooks/use-toast";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -28,6 +29,7 @@ import {
 interface ReconData {
   meta: { company: string; generated_at: string; version: string; selected_sources?: string[] };
   timings?: ReconTimings;
+  background_jobs?: BackgroundJob[];
   spiderfoot_job?: SpiderfootJob;
   website: { company: string; domain: string; url: string; found_via: string };
   dns: DnsData;
@@ -201,7 +203,7 @@ interface ReconTimings {
 
 interface SpiderfootJob {
   job_id: string;
-  provider_id?: "spiderfoot" | "spiderfoot_deep";
+  provider_id?: "spiderfoot" | "spiderfoot_deep" | "sherlock";
   scan_id?: string;
   status: "running" | "completed" | "error";
   started_at: string;
@@ -212,6 +214,8 @@ interface SpiderfootJob {
   report?: Partial<ReconData>;
   error?: string;
 }
+
+type BackgroundJob = SpiderfootJob;
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
@@ -303,14 +307,40 @@ function renderImpersonationCandidates(values: Array<Record<string, unknown>>) {
   );
 }
 
-function mergeSpiderfootJobIntoResult(current: ReconData, job: SpiderfootJob): ReconData {
+function getBackgroundJobsFromResult(data: ReconData | null): BackgroundJob[] {
+  if (!data) {
+    return [];
+  }
+
+  const jobs = [...(data.background_jobs || [])];
+  if (data.spiderfoot_job && !jobs.some((job) => job.job_id === data.spiderfoot_job?.job_id)) {
+    jobs.push(data.spiderfoot_job);
+  }
+  return jobs;
+}
+
+function mergeBackgroundJobs(current: BackgroundJob[], incoming: BackgroundJob): BackgroundJob[] {
+  const next = new Map(current.map((job) => [job.job_id, job]));
+  next.set(incoming.job_id, {
+    ...(next.get(incoming.job_id) || {}),
+    ...incoming,
+  });
+  return Array.from(next.values());
+}
+
+function mergeBackgroundJobIntoResult(current: ReconData, job: BackgroundJob): ReconData {
   const providerKey = job.provider_id || "spiderfoot";
+  const nextSpiderfootJob =
+    providerKey === "spiderfoot" || providerKey === "spiderfoot_deep"
+      ? {
+          ...(current.spiderfoot_job || { job_id: job.job_id, started_at: job.started_at, status: "running" as const }),
+          ...job,
+        }
+      : current.spiderfoot_job;
   const next: ReconData = {
     ...current,
-    spiderfoot_job: {
-      ...(current.spiderfoot_job || { job_id: job.job_id, started_at: job.started_at, status: "running" as const }),
-      ...job,
-    },
+    background_jobs: mergeBackgroundJobs(getBackgroundJobsFromResult(current), job),
+    spiderfoot_job: nextSpiderfootJob,
     provider_results: {
       ...current.provider_results,
       [providerKey]: {
@@ -340,36 +370,27 @@ function mergeSpiderfootJobIntoResult(current: ReconData, job: SpiderfootJob): R
 
   const report = job.report;
   const spiderfootSubdomains = (report.provider_results?.[providerKey]?.subdomains || []) as string[];
-  const spiderfootEmails = (report.identities?.emails || []) as string[];
-  const spiderfootEmailSources = (report.identities?.email_sources || []) as NonNullable<IdentityData["email_sources"]>;
-  const spiderfootSocialProfiles = (report.identities?.social_profiles || {}) as Record<string, { url: string; status: string; source?: string }>;
-  const spiderfootImpersonation = (report.identities?.impersonation_candidates || []) as Array<Record<string, unknown>>;
-
-  const mergedIdentities = normalizeIdentityData({
-    emails: mergeUniqueStrings(next.identities.emails, spiderfootEmails),
-    email_sources: mergeUniqueObjects(
-      next.identities.email_sources || [],
-      spiderfootEmailSources,
-      (value) => JSON.stringify([value.email, value.module, value.event_type, value.source]),
-    ) as NonNullable<IdentityData["email_sources"]>,
-    social_profiles: {
-      ...next.identities.social_profiles,
-      ...spiderfootSocialProfiles,
+  next.identities = buildCanonicalIdentitiesFromProviders(
+    {
+      ...next.identities,
+      emails: mergeUniqueStrings(next.identities.emails, (report.identities?.emails || []) as string[]),
+      email_sources: mergeUniqueObjects(
+        next.identities.email_sources || [],
+        ((report.identities?.email_sources || []) as NonNullable<IdentityData["email_sources"]>),
+        (value) => JSON.stringify([value.email, value.module, value.event_type, value.source]),
+      ) as NonNullable<IdentityData["email_sources"]>,
+      social_profiles: {
+        ...next.identities.social_profiles,
+        ...((report.identities?.social_profiles || {}) as Record<string, { url: string; status: string; source?: string }>),
+      },
+      impersonation_candidates: cleanImpersonationCandidates(mergeUniqueObjects(
+        next.identities.impersonation_candidates || [],
+        ((report.identities?.impersonation_candidates || []) as Array<Record<string, unknown>>),
+        (value) => JSON.stringify(value),
+      ) as IdentityCandidate[]),
     },
-    impersonation_candidates: mergeUniqueObjects(
-      next.identities.impersonation_candidates || [],
-      spiderfootImpersonation,
-      (value) => JSON.stringify(value),
-    ) as IdentityCandidate[],
-  });
-
-  next.identities = {
-    ...next.identities,
-    emails: mergedIdentities.emails,
-    email_sources: mergedIdentities.email_sources as NonNullable<IdentityData["email_sources"]>,
-    social_profiles: mergedIdentities.social_profiles,
-    impersonation_candidates: mergedIdentities.impersonation_candidates,
-  };
+    next.provider_results,
+  );
 
   next.dns = {
     ...next.dns,
@@ -1008,8 +1029,22 @@ function TechPanel({ tech }: { tech: TechData }) {
 
 // ── Identities Panel ────────────────────────────────────────────────────────
 
-function IdentitiesPanel({ identities, breaches }: { identities: IdentityData; breaches: BreachData }) {
-  const normalizedIdentities = normalizeIdentityData(identities);
+function IdentitiesPanel({
+  identities,
+  breaches,
+  providerResults,
+}: {
+  identities: IdentityData;
+  breaches: BreachData;
+  providerResults: Record<string, ProviderResult>;
+}) {
+  const normalizedIdentities = buildCanonicalIdentitiesFromProviders(
+    {
+      ...identities,
+      ...normalizeIdentityData(identities),
+    },
+    providerResults,
+  );
   const impersonationCandidates = normalizedIdentities.impersonation_candidates;
   const emailSourceMap = new Map((normalizedIdentities.email_sources || []).map((entry) => [entry.email.toLowerCase(), entry]));
   return (
@@ -1710,9 +1745,8 @@ export default function Dashboard() {
   });
 
   useEffect(() => {
-    const jobId = result?.spiderfoot_job?.job_id;
-    const jobStatus = result?.spiderfoot_job?.status;
-    if (!jobId || jobStatus !== "running") {
+    const runningJobs = getBackgroundJobsFromResult(result).filter((job) => job.status === "running");
+    if (runningJobs.length === 0) {
       return;
     }
 
@@ -1721,16 +1755,31 @@ export default function Dashboard() {
 
     const poll = async () => {
       try {
-        const res = await fetch(`/api/recon/jobs/${jobId}`);
-        if (!res.ok) {
-          throw new Error(`SpiderFoot poll failed with ${res.status}`);
-        }
-        const payload = await res.json();
-        if (cancelled || !payload.success || !payload.job) {
+        const snapshots = await Promise.all(runningJobs.map(async (job) => {
+          const res = await fetch(`/api/recon/jobs/${job.job_id}`);
+          if (!res.ok) {
+            throw new Error(`Background job poll failed with ${res.status}`);
+          }
+          const payload = await res.json();
+          if (!payload.success || !payload.job) {
+            return null;
+          }
+          return payload.job as BackgroundJob;
+        }));
+
+        if (cancelled) {
           return;
         }
-        setResult((current) => (current ? mergeSpiderfootJobIntoResult(current, payload.job as SpiderfootJob) : current));
-        if ((payload.job as SpiderfootJob).status === "running") {
+
+        const completedJobs = snapshots.filter((job): job is BackgroundJob => Boolean(job));
+        if (completedJobs.length > 0) {
+          setResult((current) => {
+            if (!current) return current;
+            return completedJobs.reduce((next, job) => mergeBackgroundJobIntoResult(next, job), current);
+          });
+        }
+
+        if (completedJobs.some((job) => job.status === "running")) {
           timeoutId = setTimeout(poll, 2500);
         }
       } catch {
@@ -1748,7 +1797,7 @@ export default function Dashboard() {
         clearTimeout(timeoutId);
       }
     };
-  }, [result?.spiderfoot_job?.job_id, result?.spiderfoot_job?.status]);
+  }, [result?.background_jobs, result?.spiderfoot_job?.job_id, result?.spiderfoot_job?.status]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -1892,7 +1941,7 @@ export default function Dashboard() {
                 <TechPanel tech={result.technologies} />
               </TabsContent>
               <TabsContent value="identities">
-                <IdentitiesPanel identities={result.identities} breaches={result.breaches} />
+                <IdentitiesPanel identities={result.identities} breaches={result.breaches} providerResults={result.provider_results} />
               </TabsContent>
               <TabsContent value="providers">
                 <ProvidersPanel providerResults={result.provider_results} />

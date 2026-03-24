@@ -51,7 +51,8 @@ function normalizePlatform(value: string): string {
 function scoreSocialProfile(entry: SocialProfileEntry): number {
   let score = 0;
   if ((entry.status || "").toLowerCase() === "found") score += 100;
-  if (entry.source) score += 10;
+  if (entry.source && !entry.source.startsWith("derived:")) score += 10;
+  else if (entry.source) score += 1;
   return score;
 }
 
