@@ -9,6 +9,7 @@ import os
 import requests
 
 import osint_engine
+from google_dork_provider import GoogleDorkProvider, generate_dorks
 
 
 class FakeResponse:
@@ -293,6 +294,95 @@ class OsintEngineTests(unittest.TestCase):
 
         self.assertEqual(mention["category"], "forum")
         self.assertEqual(mention["source_domain"], "reddit.com")
+
+
+class GoogleDorkProviderTests(unittest.TestCase):
+    def test_generate_dorks_returns_expected_categories_for_light_mode(self):
+        dorks = generate_dorks("example.com", mode="light")
+
+        self.assertEqual(
+            set(dorks.keys()),
+            {"subdomains", "emails", "social", "sensitive", "admin_panels"},
+        )
+        self.assertIn('site:example.com -www', dorks["subdomains"])
+        self.assertIn('"@example.com"', dorks["emails"])
+        self.assertIn('site:linkedin.com "example"', dorks["social"])
+        self.assertIn("site:example.com filetype:pdf", dorks["sensitive"])
+        self.assertIn("site:example.com inurl:login", dorks["admin_panels"])
+
+    def test_generate_dorks_full_mode_expands_queries(self):
+        light = generate_dorks("example.com", mode="light")
+        full = generate_dorks("example.com", mode="full")
+
+        self.assertGreater(len(full["sensitive"]), len(light["sensitive"]))
+        self.assertGreater(len(full["admin_panels"]), len(light["admin_panels"]))
+
+    def test_google_dork_provider_deduplicates_duplicate_urls_across_queries(self):
+        provider = GoogleDorkProvider(api_key="brave-key")
+
+        def fake_search(query: str, api_key: str):
+            return [
+                {
+                    "title": f"Result for {query}",
+                    "url": "https://example.com/admin",
+                    "snippet": "Admin panel",
+                }
+            ]
+
+        results = provider.run("example.com", mode="full", search_fn=fake_search)
+
+        urls = [item["url"] for item in results]
+        self.assertEqual(urls, ["https://example.com/admin"])
+
+    def test_google_dork_provider_normalizes_results(self):
+        provider = GoogleDorkProvider(api_key="brave-key")
+        normalized = provider.normalize(
+            [
+                {
+                    "category": "sensitive",
+                    "query": "site:example.com filetype:pdf",
+                    "title": "Sensitive PDF",
+                    "url": "https://example.com/report.pdf",
+                    "snippet": "Quarterly report",
+                }
+            ]
+        )
+
+        self.assertEqual(
+            normalized,
+            [
+                {
+                    "source": "google_dork",
+                    "category": "sensitive",
+                    "query": "site:example.com filetype:pdf",
+                    "url": "https://example.com/report.pdf",
+                    "title": "Sensitive PDF",
+                    "snippet": "Quarterly report",
+                }
+            ],
+        )
+
+    def test_google_dork_provider_preserves_partial_results_when_a_query_fails(self):
+        provider = GoogleDorkProvider(api_key="brave-key")
+        calls = []
+
+        def fake_search(query: str, api_key: str):
+            calls.append(query)
+            if "inurl:login" in query:
+                raise RuntimeError("rate limited")
+            return [
+                {
+                    "title": "Example",
+                    "url": f"https://results.example/{len(calls)}",
+                    "snippet": "Snippet",
+                }
+            ]
+
+        results = provider.run("example.com", mode="light", search_fn=fake_search)
+
+        self.assertTrue(results)
+        self.assertTrue(any("rate limited" in note for note in provider.notes))
+        self.assertGreaterEqual(len(calls), 2)
 
     def test_run_rocketreach_skips_when_key_is_missing(self):
         env = dict(os.environ)
@@ -749,6 +839,75 @@ class OsintEngineTests(unittest.TestCase):
         self.assertIn("whois", result["provider_results"])
         self.assertEqual(result["provider_results"]["duckduckgo"]["status"], "ok")
 
+    def test_run_recon_mirrors_google_dork_findings_into_threat_intelligence(self):
+        fake_identities = {
+            **osint_engine._empty_identities("example.com"),
+            "emails": ["press@example.com"],
+            "provider_results": {
+                "google_dorks": {
+                    "status": "ok",
+                    "notes": [],
+                    "duration_ms": None,
+                    "emails": ["press@example.com"],
+                    "social_profiles": [],
+                    "impersonation_candidates": [],
+                    "subdomains": [],
+                    "repos": [],
+                    "breach_hints": [],
+                    "dns_records": [],
+                    "whois": [],
+                    "ssl": [],
+                    "tech": [],
+                    "ports": [],
+                    "hosting": [],
+                    "mentions": [
+                        {
+                            "category": "sensitive",
+                            "title": "Sensitive PDF",
+                            "url": "https://example.com/report.pdf",
+                            "snippet": "Quarterly report",
+                            "source_domain": "example.com",
+                            "matched_domain": "example.com",
+                            "query": "site:example.com filetype:pdf",
+                        }
+                    ],
+                }
+            },
+            "threat_intelligence": {
+                "findings": [
+                    {
+                        "source": "google_dork",
+                        "category": "sensitive",
+                        "query": "site:example.com filetype:pdf",
+                        "url": "https://example.com/report.pdf",
+                        "title": "Sensitive PDF",
+                        "snippet": "Quarterly report",
+                    }
+                ]
+            },
+        }
+
+        with patch.dict(
+            os.environ,
+            {"OSINT_SELECTED_SOURCES": '["google_dorks"]'},
+            clear=False,
+        ):
+            with patch(
+                "osint_engine.find_website",
+                return_value={"company": "Example", "domain": "example.com", "url": "https://example.com", "found_via": "direct_input"},
+            ):
+                with patch("osint_engine.dns_enumerate", return_value=osint_engine._empty_dns("example.com")):
+                    with patch("osint_engine.get_whois", return_value=osint_engine._empty_whois("example.com")):
+                        with patch("osint_engine.get_ssl_info", return_value=osint_engine._empty_ssl("example.com")):
+                            with patch("osint_engine.get_hosting_info", return_value=osint_engine._empty_hosting("example.com")):
+                                with patch("osint_engine.fingerprint_technologies", return_value=osint_engine._empty_tech("https://example.com")):
+                                    with patch("osint_engine.harvest_emails", return_value=fake_identities):
+                                        with patch("osint_engine.check_breaches", return_value=osint_engine._empty_breaches("example.com")):
+                                            result = osint_engine.run_recon("Example")
+
+        self.assertEqual(result["threat_intelligence"]["findings"], fake_identities["threat_intelligence"]["findings"])
+        self.assertIn("google_dorks", result["provider_results"])
+
     def test_run_recon_records_exact_core_provider_details(self):
         dns_result = osint_engine._empty_dns("example.com")
         dns_result["records"] = {"A": ["1.2.3.4"], "TXT": ["v=spf1 include:_spf.example.com ~all"]}
@@ -903,32 +1062,16 @@ class OsintEngineTests(unittest.TestCase):
         self.assertEqual(result["domain"], "example.com")
         self.assertEqual(result["found_via"], "brave_search")
 
-    def test_find_website_uses_google_search_when_selected(self):
-        def fake_safe_get(url, **kwargs):
-            if "google.com/search" in url:
-                return FakeResponse(
-                    status_code=200,
-                    text="""
-                        <html>
-                          <body>
-                            <div class="g">
-                              <a href="https://www.example.com/about">Example official website</a>
-                              <span>Official example.com company website.</span>
-                            </div>
-                          </body>
-                        </html>
-                    """,
-                )
-            return FakeResponse(status_code=404)
-
+    def test_find_website_legacy_google_selection_aliases_to_google_dorks_without_direct_google_scrape(self):
         with patch.dict(os.environ, {"OSINT_SELECTED_SOURCES": '["google"]'}, clear=False):
             with patch("osint_engine._probe_url", return_value=(None, None)):
                 with patch("osint_engine._is_valid_domain", return_value=True):
-                    with patch("osint_engine.safe_get", side_effect=fake_safe_get):
+                    with patch("osint_engine.safe_get", return_value=FakeResponse(status_code=404)) as mocked_safe_get:
                         result = osint_engine.find_website("Example")
 
         self.assertEqual(result["domain"], "example.com")
-        self.assertEqual(result["found_via"], "google_search")
+        self.assertEqual(result["found_via"], "dns_only")
+        self.assertFalse(any("google.com/search" in call.args[0] for call in mocked_safe_get.call_args_list))
 
     def test_run_recon_attributes_search_provider_used_for_website_discovery(self):
         website_info = {
@@ -1257,6 +1400,99 @@ class OsintEngineTests(unittest.TestCase):
         self.assertEqual(result["provider_results"]["recon_ng"]["notes"], ["No matching emails found"])
         self.assertEqual(result["provider_results"]["rocketreach"]["notes"], ["No matching emails found"])
 
+    def test_harvest_emails_integrates_google_dorks_and_mirrors_findings(self):
+        fake_normalized = [
+            {
+                "source": "google_dork",
+                "category": "sensitive",
+                "query": "site:example.com filetype:pdf",
+                "url": "https://example.com/report.pdf",
+                "title": "Sensitive PDF",
+                "snippet": "Quarterly report",
+            },
+            {
+                "source": "google_dork",
+                "category": "emails",
+                "query": '"@example.com"',
+                "url": "https://mirror.example.net/contact",
+                "title": "Contact",
+                "snippet": "Reach us at press@example.com",
+            },
+        ]
+
+        class FakeGoogleDorkProvider:
+            def __init__(self, api_key):
+                self.api_key = api_key
+                self.notes = ["HTTP 429 while executing dork: site:example.com inurl:login"]
+
+            def run(self, domain, mode="light"):
+                return [
+                    {
+                        "category": "sensitive",
+                        "query": "site:example.com filetype:pdf",
+                        "url": "https://example.com/report.pdf",
+                        "title": "Sensitive PDF",
+                        "snippet": "Quarterly report",
+                    },
+                    {
+                        "category": "emails",
+                        "query": '"@example.com"',
+                        "url": "https://mirror.example.net/contact",
+                        "title": "Contact",
+                        "snippet": "Reach us at press@example.com",
+                    },
+                ]
+
+            def normalize(self, results):
+                self.seen_results = results
+                return fake_normalized
+
+        with patch.dict(
+            os.environ,
+            {"OSINT_SELECTED_SOURCES": '["google_dorks"]', "BRAVE_SEARCH_API_KEY": "brave-test-key"},
+            clear=False,
+        ):
+            with patch("osint_engine.run_theharvester", return_value=set()):
+                with patch("osint_engine.run_recon_ng", return_value=set()):
+                    with patch("osint_engine.run_rocketreach", return_value=set()):
+                        with patch("osint_engine.run_emailharvest_passive", return_value=set()):
+                            with patch("osint_engine.run_spiderfoot", return_value={"emails": set(), "subdomains": set(), "social_profiles": {}, "mentions": [], "hosting": []}):
+                                with patch("osint_engine.GoogleDorkProvider", FakeGoogleDorkProvider):
+                                    with patch("osint_engine.safe_get", return_value=None):
+                                        with patch("osint_engine.discover_social_profiles", return_value={}):
+                                            result = osint_engine.harvest_emails("example.com", "Example")
+
+        self.assertIn("press@example.com", result["emails"])
+        self.assertEqual(result["provider_results"]["google_dorks"]["emails"], ["press@example.com"])
+        self.assertEqual(
+            result["provider_results"]["google_dorks"]["mentions"],
+            [
+                {
+                    "category": "sensitive",
+                    "title": "Sensitive PDF",
+                    "url": "https://example.com/report.pdf",
+                    "snippet": "Quarterly report",
+                    "source_domain": "example.com",
+                    "matched_domain": "example.com",
+                    "query": "site:example.com filetype:pdf",
+                },
+                {
+                    "category": "emails",
+                    "title": "Contact",
+                    "url": "https://mirror.example.net/contact",
+                    "snippet": "Reach us at press@example.com",
+                    "source_domain": "mirror.example.net",
+                    "matched_domain": "example.com",
+                    "query": '"@example.com"',
+                },
+            ],
+        )
+        self.assertEqual(result["threat_intelligence"]["findings"], fake_normalized)
+        self.assertIn(
+            "HTTP 429 while executing dork: site:example.com inurl:login",
+            result["provider_results"]["google_dorks"]["notes"],
+        )
+
     def test_harvest_emails_skips_extra_social_and_crawl_work_for_spiderfoot_only(self):
         spiderfoot_findings = {
             "emails": {"security@example.com"},
@@ -1390,52 +1626,21 @@ class OsintEngineTests(unittest.TestCase):
         self.assertEqual(provider_results["subdomainfinderc99"]["subdomains"], ["dev.example.com", "test.example.com"])
         self.assertEqual(provider_results["thc"]["subdomains"], ["cdn.example.com", "mail.example.com"])
 
-    def test_run_emailharvest_passive_collects_google_evidence(self):
+    def test_run_emailharvest_passive_legacy_google_selection_does_not_scrape_google(self):
         provider_results = {}
-
-        def fake_safe_get(url, **kwargs):
-            if "google.com/search" in url:
-                return FakeResponse(
-                    status_code=200,
-                    text="""
-                        <html>
-                          <body>
-                            <a href="https://www.google.com/search?sca_esv=test">Ignored shell</a>
-                            <div class="g">
-                              <a href="https://www.reddit.com/r/example/comments/123">Metrorex forum mention</a>
-                              <span>Employees discuss example.com and list info@example.com for contact.</span>
-                            </div>
-                            <div class="g">
-                              <a href="https://careers.example.com/jobs/platform-engineer">Platform Engineer</a>
-                              <span>Join example.com careers. Contact jobs@example.com.</span>
-                            </div>
-                            <div class="g">
-                              <a href="https://support.google.com/websearch/answer/2466433">Google support</a>
-                              <span>Should not appear in provider results.</span>
-                            </div>
-                          </body>
-                        </html>
-                    """,
-                )
-            raise AssertionError(f"unexpected url {url}")
 
         with patch.dict(
             os.environ,
             {"OSINT_SELECTED_SOURCES": '["google"]'},
             clear=False,
         ):
-            with patch("osint_engine.safe_get", side_effect=fake_safe_get):
+            with patch("osint_engine.safe_get", return_value=FakeResponse(status_code=404)) as mocked_safe_get:
                 emails = osint_engine.run_emailharvest_passive("example.com", provider_results)
 
-        self.assertEqual(emails, {"info@example.com", "jobs@example.com"})
-        self.assertEqual(provider_results["google"]["emails"], ["info@example.com", "jobs@example.com"])
-        self.assertEqual(len(provider_results["google"]["mentions"]), 2)
-        self.assertEqual(provider_results["google"]["mentions"][0]["category"], "forum")
-        self.assertEqual(provider_results["google"]["mentions"][1]["category"], "jobs")
-        self.assertNotIn(
-            "support.google.com",
-            " ".join(mention.get("url", "") for mention in provider_results["google"]["mentions"]),
-        )
+        self.assertEqual(emails, set())
+        self.assertNotIn("google", provider_results)
+        self.assertNotIn("google_dorks", provider_results)
+        self.assertFalse(any("google.com/search" in call.args[0] for call in mocked_safe_get.call_args_list))
 
     def test_run_emailharvest_passive_records_windvane_diagnostic_note(self):
         provider_results = {}

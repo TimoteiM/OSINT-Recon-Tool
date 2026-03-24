@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { cleanImpersonationCandidates, type IdentityCandidate } from "@/lib/impersonation-candidates";
+import { normalizeIdentityData } from "@/lib/identity-normalization";
 import { useToast } from "@/hooks/use-toast";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +12,8 @@ import {
   getDefaultSelectedProviderIds,
   getSelectableProviderIds,
   osintProviders,
+  serializeSelectedProviderIdsForRequest,
+  stripSpiderfootProviderIds,
   type OsintProvider,
 } from "@shared/osint-providers";
 import {
@@ -117,6 +121,14 @@ interface TechData {
 interface IdentityData {
   domain: string;
   emails: string[];
+  email_sources?: Array<{
+    email: string;
+    module: string;
+    module_type: "api" | "public" | "unknown";
+    event_type: string;
+    source: string;
+    api_backed: boolean;
+  }>;
   email_format: string | null;
   github_repos: { name: string; url: string; stars: number; description: string }[];
   social_profiles: Record<string, { url: string; status: string; source?: string }>;
@@ -144,6 +156,14 @@ interface ProviderResult {
   duration_ms?: number | null;
   progress_logs?: string[];
   emails?: string[];
+  email_sources?: Array<{
+    email: string;
+    module: string;
+    module_type: "api" | "public" | "unknown";
+    event_type: string;
+    source: string;
+    api_backed: boolean;
+  }>;
   mentions?: Array<{
     category?: string;
     title?: string;
@@ -248,6 +268,41 @@ function mergeUniqueObjects<T>(current: T[], incoming: T[], keyFn: (value: T) =>
   return Array.from(next.values());
 }
 
+function renderImpersonationCandidates(values: Array<Record<string, unknown>>) {
+  const candidates = cleanImpersonationCandidates(values as IdentityCandidate[]);
+  if (candidates.length === 0) return null;
+
+  return (
+    <div className="space-y-3">
+      {candidates.map((candidate, index) => (
+        <div
+          key={`${candidate.url || candidate.username || index}`}
+          className="rounded border border-[hsl(0_65%_55%/0.28)] bg-[hsl(0_65%_55%/0.08)] p-3"
+        >
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <p className="text-sm font-mono text-[var(--color-text)]">
+                {candidate.platform || "Profile"}: {candidate.username || candidate.url}
+              </p>
+              <p className="text-xs text-[var(--color-text-muted)] mt-1 font-mono">
+                {candidate.reason || "suspicious variation"}
+              </p>
+              {candidate.source && (
+                <p className="text-[0.65rem] uppercase tracking-wide font-mono text-[var(--color-text-faint)] mt-2">
+                  Source: {candidate.source}
+                </p>
+              )}
+            </div>
+            <a href={candidate.url} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="w-3.5 h-3.5 text-[var(--color-primary)] hover:opacity-70" />
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function mergeSpiderfootJobIntoResult(current: ReconData, job: SpiderfootJob): ReconData {
   const providerKey = job.provider_id || "spiderfoot";
   const next: ReconData = {
@@ -286,12 +341,17 @@ function mergeSpiderfootJobIntoResult(current: ReconData, job: SpiderfootJob): R
   const report = job.report;
   const spiderfootSubdomains = (report.provider_results?.[providerKey]?.subdomains || []) as string[];
   const spiderfootEmails = (report.identities?.emails || []) as string[];
+  const spiderfootEmailSources = (report.identities?.email_sources || []) as NonNullable<IdentityData["email_sources"]>;
   const spiderfootSocialProfiles = (report.identities?.social_profiles || {}) as Record<string, { url: string; status: string; source?: string }>;
   const spiderfootImpersonation = (report.identities?.impersonation_candidates || []) as Array<Record<string, unknown>>;
 
-  next.identities = {
-    ...next.identities,
+  const mergedIdentities = normalizeIdentityData({
     emails: mergeUniqueStrings(next.identities.emails, spiderfootEmails),
+    email_sources: mergeUniqueObjects(
+      next.identities.email_sources || [],
+      spiderfootEmailSources,
+      (value) => JSON.stringify([value.email, value.module, value.event_type, value.source]),
+    ) as NonNullable<IdentityData["email_sources"]>,
     social_profiles: {
       ...next.identities.social_profiles,
       ...spiderfootSocialProfiles,
@@ -300,7 +360,15 @@ function mergeSpiderfootJobIntoResult(current: ReconData, job: SpiderfootJob): R
       next.identities.impersonation_candidates || [],
       spiderfootImpersonation,
       (value) => JSON.stringify(value),
-    ),
+    ) as IdentityCandidate[],
+  });
+
+  next.identities = {
+    ...next.identities,
+    emails: mergedIdentities.emails,
+    email_sources: mergedIdentities.email_sources as NonNullable<IdentityData["email_sources"]>,
+    social_profiles: mergedIdentities.social_profiles,
+    impersonation_candidates: mergedIdentities.impersonation_candidates,
   };
 
   next.dns = {
@@ -941,12 +1009,15 @@ function TechPanel({ tech }: { tech: TechData }) {
 // ── Identities Panel ────────────────────────────────────────────────────────
 
 function IdentitiesPanel({ identities, breaches }: { identities: IdentityData; breaches: BreachData }) {
+  const normalizedIdentities = normalizeIdentityData(identities);
+  const impersonationCandidates = normalizedIdentities.impersonation_candidates;
+  const emailSourceMap = new Map((normalizedIdentities.email_sources || []).map((entry) => [entry.email.toLowerCase(), entry]));
   return (
     <div className="space-y-6">
       {/* Emails */}
       <div className="terminal-card p-5">
-        <SectionTitle icon={Mail} label={`Emails (${identities.emails.length} discovered)`} />
-        {identities.emails.length === 0 ? (
+        <SectionTitle icon={Mail} label={`Emails (${normalizedIdentities.emails.length} discovered)`} />
+        {normalizedIdentities.emails.length === 0 ? (
           <p className="text-[var(--color-text-faint)] text-sm font-mono">No email addresses discovered</p>
         ) : (
           <>
@@ -956,10 +1027,17 @@ function IdentitiesPanel({ identities, breaches }: { identities: IdentityData; b
               </div>
             )}
             <div className="space-y-1.5">
-              {identities.emails.map((email, i) => (
+              {normalizedIdentities.emails.map((email, i) => (
                 <div key={i} className="flex items-center gap-3 group py-1.5 border-b border-[var(--color-border)] last:border-0">
                   <Mail className="w-3.5 h-3.5 text-[var(--color-text-faint)] shrink-0" />
-                  <code className="text-sm text-[var(--color-text)] flex-1">{email}</code>
+                  <div className="flex-1 min-w-0">
+                    <code className="text-sm text-[var(--color-text)]">{email}</code>
+                    {emailSourceMap.get(email.toLowerCase()) && (
+                      <div className="text-[11px] uppercase tracking-[0.16em] text-[var(--color-text-faint)] mt-0.5">
+                        Source: {emailSourceMap.get(email.toLowerCase())?.module} • {emailSourceMap.get(email.toLowerCase())?.api_backed ? "API-backed" : emailSourceMap.get(email.toLowerCase())?.module_type === "public" ? "Public" : "Unknown"}
+                      </div>
+                    )}
+                  </div>
                   <button onClick={() => copyToClipboard(email)}
                     className="opacity-0 group-hover:opacity-100 transition-opacity">
                     <Copy className="w-3.5 h-3.5 text-[var(--color-text-faint)] hover:text-[var(--color-primary)]" />
@@ -975,7 +1053,7 @@ function IdentitiesPanel({ identities, breaches }: { identities: IdentityData; b
       <div className="terminal-card p-5">
         <SectionTitle icon={Users} label="Social Media Presence" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {Object.entries(identities.social_profiles).map(([platform, info]) => {
+          {Object.entries(normalizedIdentities.social_profiles).map(([platform, info]) => {
             const found = info.status === "found";
             return (
               <div key={platform} className={`flex items-center justify-between p-3 rounded border ${found ? "border-[hsl(185_80%_55%/0.25)] bg-[hsl(185_80%_55%/0.06)]" : "border-[var(--color-border)] opacity-40"}`}>
@@ -1003,11 +1081,11 @@ function IdentitiesPanel({ identities, breaches }: { identities: IdentityData; b
         </div>
       </div>
 
-      {identities.impersonation_candidates && identities.impersonation_candidates.length > 0 && (
+      {impersonationCandidates.length > 0 && (
         <div className="terminal-card p-5">
           <SectionTitle icon={AlertTriangle} label="Possible Impersonation" />
           <div className="space-y-3">
-            {identities.impersonation_candidates.map((candidate, index) => (
+            {impersonationCandidates.map((candidate, index) => (
               <div
                 key={`${candidate.url || candidate.username || index}`}
                 className="rounded border border-[hsl(0_65%_55%/0.28)] bg-[hsl(0_65%_55%/0.08)] p-3"
@@ -1015,7 +1093,7 @@ function IdentitiesPanel({ identities, breaches }: { identities: IdentityData; b
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <p className="text-sm font-mono text-[var(--color-text)]">
-                      {candidate.platform || "Unknown"}: {candidate.username || "unknown"}
+                      {candidate.platform || "Profile"}: {candidate.username || candidate.url}
                     </p>
                     <p className="text-xs text-[var(--color-text-muted)] mt-1 font-mono">
                       {candidate.reason || "suspicious variation"}
@@ -1227,41 +1305,55 @@ function ProvidersPanel({ providerResults }: { providerResults: Record<string, P
                   {sections.map((section) => (
                     <div key={section.label}>
                       <p className="text-xs text-[var(--color-text-faint)] font-mono uppercase tracking-widest mb-2">{section.label}</p>
-                      <div className="space-y-1.5">
-                        {section.values.map((value, index) => (
-                          <div key={index} className="border-b border-[var(--color-border)] last:border-0 py-1.5">
-                            {typeof value === "string" ? (
-                              <code className="text-xs text-[var(--color-text)] break-all whitespace-pre-wrap">{value}</code>
-                            ) : isMentionValue(value) ? (
-                              <div className="space-y-1">
-                                {value.title && <p className="text-sm text-[var(--color-text)] font-medium">{value.title}</p>}
-                                {value.url && (
-                                  <a
-                                    href={value.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-xs font-mono text-[var(--color-primary)] break-all inline-flex items-center gap-1"
-                                  >
-                                    {value.url}
-                                    <ExternalLink className="w-3 h-3" />
-                                  </a>
-                                )}
-                                {value.snippet && (
-                                  <p className="text-xs text-[var(--color-text-muted)] whitespace-pre-wrap">{value.snippet}</p>
-                                )}
-                                <div className="flex flex-wrap gap-2 text-[0.65rem] font-mono uppercase tracking-wide text-[var(--color-text-faint)]">
-                                  {value.source_domain && <span>{value.source_domain}</span>}
-                                  {value.query && <span>Query: {value.query}</span>}
-                                </div>
+                      {section.label === "Possible Impersonation" ? (
+                        renderImpersonationCandidates(section.values as Array<Record<string, unknown>>) || (
+                          <div className="space-y-1.5">
+                            {section.values.map((value, index) => (
+                              <div key={index} className="border-b border-[var(--color-border)] last:border-0 py-1.5">
+                                <code className="text-xs text-[var(--color-text)] break-all whitespace-pre-wrap">
+                                  {typeof value === "string" ? value : JSON.stringify(value, null, 2)}
+                                </code>
                               </div>
-                            ) : (
-                              <code className="text-xs text-[var(--color-text)] break-all whitespace-pre-wrap">
-                                {JSON.stringify(value, null, 2)}
-                              </code>
-                            )}
+                            ))}
                           </div>
-                        ))}
-                      </div>
+                        )
+                      ) : (
+                        <div className="space-y-1.5">
+                          {section.values.map((value, index) => (
+                            <div key={index} className="border-b border-[var(--color-border)] last:border-0 py-1.5">
+                              {typeof value === "string" ? (
+                                <code className="text-xs text-[var(--color-text)] break-all whitespace-pre-wrap">{value}</code>
+                              ) : isMentionValue(value) ? (
+                                <div className="space-y-1">
+                                  {value.title && <p className="text-sm text-[var(--color-text)] font-medium">{value.title}</p>}
+                                  {value.url && (
+                                    <a
+                                      href={value.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="text-xs font-mono text-[var(--color-primary)] break-all inline-flex items-center gap-1"
+                                    >
+                                      {value.url}
+                                      <ExternalLink className="w-3 h-3" />
+                                    </a>
+                                  )}
+                                  {value.snippet && (
+                                    <p className="text-xs text-[var(--color-text-muted)] whitespace-pre-wrap">{value.snippet}</p>
+                                  )}
+                                  <div className="flex flex-wrap gap-2 text-[0.65rem] font-mono uppercase tracking-wide text-[var(--color-text-faint)]">
+                                    {value.source_domain && <span>{value.source_domain}</span>}
+                                    {value.query && <span>Query: {value.query}</span>}
+                                  </div>
+                                </div>
+                              ) : (
+                                <code className="text-xs text-[var(--color-text)] break-all whitespace-pre-wrap">
+                                  {JSON.stringify(value, null, 2)}
+                                </code>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -1524,11 +1616,85 @@ export default function Dashboard() {
   const [selectedProviderIds, setSelectedProviderIds] = useState<string[]>(() => getDefaultSelectedProviderIds());
   const { toast } = useToast();
   const inputRef = useRef<HTMLInputElement>(null);
+  const spiderfootStartupFailure = "SpiderFoot optsraw did not return a token";
 
   const mutation = useMutation({
     mutationFn: async ({ name, sources }: { name: string; sources: string[] }) => {
-      const res = await apiRequest("POST", "/api/recon", { company: name, sources });
-      return res.json();
+      try {
+        const res = await apiRequest("POST", "/api/recon", {
+          company: name,
+          sources: serializeSelectedProviderIdsForRequest(sources),
+        });
+        return res.json();
+      } catch (error) {
+        const message = String(error);
+        const fallbackSources = stripSpiderfootProviderIds(sources);
+        const hasSpiderfootSelected = fallbackSources.length !== sources.length;
+
+        if (!message.includes(spiderfootStartupFailure) || !hasSpiderfootSelected || fallbackSources.length === 0) {
+          throw error;
+        }
+
+        toast({
+          title: "SpiderFoot unavailable",
+          description: "Retrying without SpiderFoot so the rest of the providers can finish.",
+          variant: "destructive",
+        });
+
+        const retryResponse = await apiRequest("POST", "/api/recon", {
+          company: name,
+          sources: serializeSelectedProviderIdsForRequest(fallbackSources),
+        });
+        const retryPayload = await retryResponse.json();
+
+        if (retryPayload?.data) {
+          retryPayload.data.provider_results = retryPayload.data.provider_results || {};
+          if (sources.includes("spiderfoot")) {
+            retryPayload.data.provider_results.spiderfoot = {
+              status: "error",
+              notes: ["SpiderFoot startup failed: SpiderFoot optsraw did not return a token"],
+              duration_ms: null,
+              emails: [],
+              email_sources: [],
+              social_profiles: [],
+              impersonation_candidates: [],
+              subdomains: [],
+              repos: [],
+              breach_hints: [],
+              dns_records: [],
+              whois: [],
+              ssl: [],
+              tech: [],
+              ports: [],
+              hosting: [],
+              mentions: [],
+            };
+          }
+          if (sources.includes("spiderfoot_deep")) {
+            retryPayload.data.provider_results.spiderfoot_deep = {
+              status: "error",
+              notes: ["SpiderFoot startup failed: SpiderFoot optsraw did not return a token"],
+              duration_ms: null,
+              emails: [],
+              email_sources: [],
+              social_profiles: [],
+              impersonation_candidates: [],
+              subdomains: [],
+              repos: [],
+              breach_hints: [],
+              dns_records: [],
+              whois: [],
+              ssl: [],
+              tech: [],
+              ports: [],
+              hosting: [],
+              mentions: [],
+            };
+          }
+        }
+
+        return retryPayload;
+      }
     },
     onSuccess: (data) => {
       if (data.success && data.data) {

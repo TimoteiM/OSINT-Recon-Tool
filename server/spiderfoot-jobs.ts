@@ -7,12 +7,22 @@ import { resolvePythonCommand } from "./recon-runner";
 
 type SpiderfootJobStatus = "running" | "completed" | "error";
 
+type SpiderfootEmailSource = {
+  email: string;
+  module: string;
+  module_type: "api" | "public" | "unknown";
+  event_type: string;
+  source: string;
+  api_backed: boolean;
+};
+
 type SpiderfootProviderResult = {
   status: string;
   notes: string[];
   progress_logs: string[];
   duration_ms: number | null;
   emails: string[];
+  email_sources: SpiderfootEmailSource[];
   social_profiles: Record<string, { url: string; status: string; source?: string }>;
   impersonation_candidates: unknown[];
   subdomains: string[];
@@ -52,6 +62,12 @@ type SpiderfootTransport = {
   getJson: (path: string, params?: Record<string, unknown>) => Promise<unknown>;
 };
 
+type SpiderfootModuleOption = {
+  mod: string;
+  opt: string;
+  val: string;
+};
+
 type StartSpiderfootJobOptions = {
   companyName: string;
   providerId: SpiderfootProviderId;
@@ -85,6 +101,7 @@ const DEFAULT_POLL_INTERVAL_MS = 2500;
 const DEFAULT_SERVICE_PORT = 5001;
 const PASSIVE_EVENT_TYPES = [
   "EMAILADDR",
+  "EMAILADDR_GENERIC",
   "INTERNET_NAME",
   "DOMAIN_NAME",
   "SOCIAL_MEDIA",
@@ -96,8 +113,11 @@ const PASSIVE_EVENT_TYPES = [
 ].join(",");
 
 function findReusableJob(companyName: string, providerId: SpiderfootProviderId): SpiderfootJob | undefined {
+  if (providerId === "spiderfoot_deep") {
+    return undefined;
+  }
   const normalizedCompany = companyName.trim().toLowerCase();
-  for (const job of jobs.values()) {
+  for (const job of Array.from(jobs.values())) {
     if (job.provider_id !== providerId) continue;
     if (job.company_name.trim().toLowerCase() !== normalizedCompany) continue;
     if (job.status !== "running") continue;
@@ -107,6 +127,7 @@ function findReusableJob(companyName: string, providerId: SpiderfootProviderId):
 }
 const DEEP_EVENT_TYPES = [
   "EMAILADDR",
+  "EMAILADDR_GENERIC",
   "EMAILADDR_COMPROMISED",
   "PASSWORD_COMPROMISED",
   "HASH_COMPROMISED",
@@ -125,6 +146,16 @@ const DEEP_EVENT_TYPES = [
   "USERNAME",
   "ACCOUNT_EXTERNAL_OWNED_COMPROMISED",
   "ACCOUNT_EXTERNAL_USER_SHARED_COMPROMISED",
+].join(",");
+
+const DEEP_MODULE_LIST = [
+  "sfp_accounts",
+  "sfp_socialprofiles",
+  "sfp_hunter",
+  "sfp_skymem",
+  "sfp_emailformat",
+  "sfp_haveibeenpwned",
+  "sfp_dehashed",
 ].join(",");
 
 function nowIso(): string {
@@ -148,6 +179,7 @@ function makeEmptyProviderResult(note: string): SpiderfootProviderResult {
     progress_logs: [],
     duration_ms: null,
     emails: [],
+    email_sources: [],
     social_profiles: {},
     impersonation_candidates: [],
     subdomains: [],
@@ -177,6 +209,17 @@ function normalizeTargetDomain(target: string): string {
 
 function uniqStrings(values: string[]): string[] {
   return Array.from(new Set(values));
+}
+
+function classifySpiderfootEmailModule(moduleName: string): SpiderfootEmailSource["module_type"] {
+  const normalized = moduleName.trim().toLowerCase();
+  if (["sfp_hunter", "sfp_haveibeenpwned", "sfp_dehashed"].includes(normalized)) {
+    return "api";
+  }
+  if (["sfp_skymem", "sfp_emailformat"].includes(normalized)) {
+    return "public";
+  }
+  return "unknown";
 }
 
 function mergeUniqueByKey<T>(current: T[], incoming: T[], keyFn: (value: T) => string): T[] {
@@ -213,6 +256,130 @@ function socialProfileFromUrl(value: string): [string, { url: string; status: st
       return [platform, { url: normalized, status: "found", source: "spiderfoot" }];
     }
   }
+  return null;
+}
+
+function decodeSpiderfootValue(value: string): string {
+  return value
+    .replace(/\\n/g, " ")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&amp;/gi, "&")
+    .trim();
+}
+
+function extractSpiderfootUrl(value: string): string | null {
+  const decoded = decodeSpiderfootValue(value);
+  const sfurlMatch = decoded.match(/<SFURL>(https?:\/\/[^<\s]+)<\/SFURL>/i);
+  if (sfurlMatch?.[1]) {
+    return sfurlMatch[1].trim().replace(/\/+$/, "");
+  }
+
+  const plainUrlMatch = decoded.match(/https?:\/\/[^\s<>"']+/i);
+  if (plainUrlMatch?.[0]) {
+    return plainUrlMatch[0].trim().replace(/\/+$/, "");
+  }
+
+  return null;
+}
+
+function parseProfileCandidate(value: string): {
+  platform?: string;
+  username?: string;
+  url: string;
+} | null {
+  const url = extractSpiderfootUrl(value);
+  if (!url) return null;
+  const decoded = decodeSpiderfootValue(value);
+
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return null;
+  }
+
+  const host = parsed.hostname.toLowerCase();
+  const pathParts = parsed.pathname.split("/").filter(Boolean);
+
+  if ((host === "hub.docker.com" || host === "www.hub.docker.com") && pathParts[0] === "u" && pathParts[1]) {
+    return {
+      platform: "Docker Hub",
+      username: pathParts[1],
+      url,
+    };
+  }
+
+  if ((host === "github.com" || host === "www.github.com") && pathParts[0]) {
+    return {
+      platform: "GitHub",
+      username: pathParts[0],
+      url,
+    };
+  }
+
+  if ((host === "linkedin.com" || host === "www.linkedin.com") && pathParts[0] === "company" && pathParts[1]) {
+    return {
+      platform: "LinkedIn",
+      username: pathParts[1],
+      url,
+    };
+  }
+
+  if ((host === "x.com" || host === "twitter.com" || host === "www.x.com" || host === "www.twitter.com") && pathParts[0]) {
+    return {
+      platform: "Twitter/X",
+      username: pathParts[0].replace(/^@/, ""),
+      url,
+    };
+  }
+
+  if ((host === "instagram.com" || host === "www.instagram.com") && pathParts[0]) {
+    return {
+      platform: "Instagram",
+      username: pathParts[0].replace(/^@/, ""),
+      url,
+    };
+  }
+
+  if ((host === "facebook.com" || host === "www.facebook.com") && pathParts[0]) {
+    return {
+      platform: "Facebook",
+      username: pathParts[0],
+      url,
+    };
+  }
+
+  if ((host === "youtube.com" || host === "www.youtube.com") && pathParts[0] && ["@", "c", "user", "channel"].some((prefix) => pathParts[0].startsWith(prefix) || pathParts[0] === prefix)) {
+    const username = pathParts[0].startsWith("@") ? pathParts[0].slice(1) : pathParts[1];
+    if (username) {
+      return {
+        platform: "YouTube",
+        username,
+        url,
+      };
+    }
+  }
+
+  if ((host === "tiktok.com" || host === "www.tiktok.com") && pathParts[0]?.startsWith("@")) {
+    return {
+      platform: "TikTok",
+      username: pathParts[0].slice(1),
+      url,
+    };
+  }
+
+  const labelMatch = decoded.match(/^([^<(]+?)(?:\s*\(.*?\))?\s*<SFURL>/i);
+  const labelPlatform = labelMatch?.[1]?.trim();
+  const username = pathParts[pathParts.length - 1];
+  if (labelPlatform && username) {
+    return {
+      platform: labelPlatform,
+      username: username.replace(/^@/, ""),
+      url,
+    };
+  }
+
   return null;
 }
 
@@ -320,41 +487,118 @@ function addImpersonationCandidate(provider: SpiderfootProviderResult, candidate
   );
 }
 
+function normalizeStoredImpersonationCandidate(candidate: unknown): Record<string, unknown> | null {
+  if (!candidate || typeof candidate !== "object") return null;
+  const record = candidate as Record<string, unknown>;
+  if (typeof record.url === "string" && record.url.startsWith("http")) {
+    return record;
+  }
+
+  const parsed = typeof record.username === "string"
+    ? parseProfileCandidate(record.username)
+    : null;
+  if (!parsed) return null;
+
+  return {
+    platform: parsed.platform,
+    username: parsed.username,
+    url: parsed.url,
+    reason: typeof record.reason === "string" ? record.reason : "SpiderFoot deep account candidate",
+    source: typeof record.source === "string" ? record.source : "spiderfoot_deep",
+  };
+}
+
+function normalizeStoredImpersonationCandidates(provider: SpiderfootProviderResult): void {
+  provider.impersonation_candidates = provider.impersonation_candidates
+    .map((candidate) => normalizeStoredImpersonationCandidate(candidate))
+    .filter((candidate): candidate is Record<string, unknown> => Boolean(candidate));
+}
+
 function maybeAddDeepImpersonationCandidate(job: SpiderfootJob, eventType: string, value: string): void {
   if (job.provider_id !== "spiderfoot_deep") return;
 
-  if (eventType === "SOCIAL_MEDIA") {
-    const social = socialProfileFromUrl(value);
-    if (social) {
-      addImpersonationCandidate(job.provider_result, {
-        platform: social[0],
-        url: social[1].url,
-        reason: "SpiderFoot deep social discovery candidate",
-        source: "spiderfoot_deep",
-      });
-    }
-    return;
-  }
-
-  if (eventType === "AFFILIATE_DOMAIN_NAME" || eventType === "AFFILIATE_INTERNET_NAME") {
-    if (!looksLikeMeaningfulAffiliateDomain(job, value)) {
-      return;
-    }
-    addImpersonationCandidate(job.provider_result, {
-      platform: eventType,
-      matched_candidate: value,
-      reason: "SpiderFoot deep related-domain candidate",
-      source: "spiderfoot_deep",
-    });
-    return;
-  }
-
   if (eventType === "USERNAME" || eventType.startsWith("ACCOUNT_EXTERNAL_")) {
+    const candidate = parseProfileCandidate(value);
+    if (!candidate) return;
     addImpersonationCandidate(job.provider_result, {
-      username: value,
+      platform: candidate.platform,
+      username: candidate.username,
+      url: candidate.url,
       reason: "SpiderFoot deep account candidate",
       source: "spiderfoot_deep",
     });
+  }
+}
+
+function getSpiderfootScanConfig(providerId: SpiderfootProviderId): {
+  typelist: string;
+  usecase: string;
+  modulelist: string;
+} {
+  if (providerId === "spiderfoot_deep") {
+    return {
+      typelist: DEEP_EVENT_TYPES,
+      usecase: "all",
+      modulelist: DEEP_MODULE_LIST,
+    };
+  }
+
+  return {
+    typelist: PASSIVE_EVENT_TYPES,
+    usecase: "passive",
+    modulelist: "",
+  };
+}
+
+function getSpiderfootModuleOptions(providerId: SpiderfootProviderId, env: NodeJS.ProcessEnv): SpiderfootModuleOption[] {
+  if (providerId !== "spiderfoot_deep") {
+    return [];
+  }
+
+  const options: SpiderfootModuleOption[] = [];
+  const hunterKey = env.Hunter_API_KEY || env.HunterIO_API_KEY;
+  if (hunterKey) {
+    options.push({ mod: "sfp_hunter", opt: "api_key", val: hunterKey });
+  }
+
+  const hibpKey = env.HaveIBeenPwned_API_KEY;
+  if (hibpKey) {
+    options.push({ mod: "sfp_haveibeenpwned", opt: "api_key", val: hibpKey });
+  }
+
+  return options;
+}
+
+async function applySpiderfootModuleOptions(
+  transport: SpiderfootTransport,
+  moduleOptions: SpiderfootModuleOption[],
+): Promise<void> {
+  if (moduleOptions.length === 0) {
+    return;
+  }
+
+  const payload = await transport.getJson("/optsraw");
+  if (!Array.isArray(payload) || payload[0] !== "SUCCESS" || !payload[1] || typeof payload[1] !== "object") {
+    throw new Error(`SpiderFoot optsraw failed: ${JSON.stringify(payload)}`);
+  }
+
+  const token = typeof (payload[1] as Record<string, unknown>).token === "string"
+    ? (payload[1] as Record<string, unknown>).token
+    : "";
+  if (!token) {
+    throw new Error("SpiderFoot optsraw did not return a token");
+  }
+
+  for (const option of moduleOptions) {
+    const savePayload = await transport.postJson("/savesettingsraw", {
+      allopts: JSON.stringify({
+        [`module.${option.mod}.${option.opt}`]: option.val,
+      }),
+      token,
+    });
+    if (!Array.isArray(savePayload) || savePayload[0] !== "SUCCESS") {
+      throw new Error(`SpiderFoot savesettingsraw failed: ${JSON.stringify(savePayload)}`);
+    }
   }
 }
 
@@ -365,6 +609,7 @@ function mergeEventRows(job: SpiderfootJob, rows: unknown): void {
     const eventType = String(row[10] ?? "").toUpperCase();
     const value = String(row[1] ?? "").trim();
     const sourceValue = String(row[2] ?? "").trim();
+    const moduleValue = String(row[3] ?? "").trim();
     const eventId = String(row[7] ?? `${eventType}:${value}:${sourceValue}`);
     if (job.seen_event_ids.has(eventId)) {
       continue;
@@ -374,8 +619,22 @@ function mergeEventRows(job: SpiderfootJob, rows: unknown): void {
     if (!value) continue;
     const lowered = value.toLowerCase();
 
-    if (eventType === "EMAILADDR" && (!job.target_domain || lowered.endsWith(`@${job.target_domain}`))) {
+    if ((eventType === "EMAILADDR" || eventType === "EMAILADDR_GENERIC")
+      && (!job.target_domain || lowered.endsWith(`@${job.target_domain}`))) {
       job.provider_result.emails = addUniqueString(job.provider_result.emails, lowered);
+      const moduleType = classifySpiderfootEmailModule(moduleValue);
+      job.provider_result.email_sources = mergeUniqueByKey(
+        job.provider_result.email_sources,
+        [{
+          email: lowered,
+          module: moduleValue || "unknown",
+          module_type: moduleType,
+          event_type: eventType,
+          source: sourceValue,
+          api_backed: moduleType === "api",
+        }],
+        (entry) => JSON.stringify([entry.email, entry.module, entry.event_type, entry.source]),
+      );
       continue;
     }
 
@@ -421,9 +680,11 @@ function mergeEventRows(job: SpiderfootJob, rows: unknown): void {
 }
 
 function buildSpiderfootPartialReport(providerId: SpiderfootProviderId, provider: SpiderfootProviderResult): Record<string, unknown> {
+  normalizeStoredImpersonationCandidates(provider);
   return {
     identities: {
       emails: provider.emails,
+      email_sources: provider.email_sources,
       social_profiles: provider.social_profiles,
       impersonation_candidates: provider.impersonation_candidates,
     },
@@ -518,6 +779,9 @@ function findReusableScanId(
   targetDomain: string,
   providerId: SpiderfootProviderId,
 ): string | null {
+  if (providerId === "spiderfoot_deep") {
+    return null;
+  }
   if (!Array.isArray(scanListPayload)) return null;
   const normalizedCompany = spiderfootScanName(companyName, providerId).trim().toLowerCase();
   const normalizedTarget = targetDomain.trim().toLowerCase();
@@ -649,16 +913,20 @@ export async function startSpiderfootJob({
 
   const effectiveTransport = transport || createHttpTransport(spiderfootService.baseUrl || resolveSpiderfootBaseUrl(env));
   const targetDomain = normalizeTargetDomain(companyName);
+  const scanTarget = targetDomain || companyName;
   const startedAt = nowIso();
+  const scanConfig = getSpiderfootScanConfig(providerId);
+  const moduleOptions = getSpiderfootModuleOptions(providerId, env);
   const existingScans = await effectiveTransport.getJson("/scanlist");
   const reusableScanId = findReusableScanId(existingScans, companyName, targetDomain, providerId);
   const scanId = reusableScanId || await (async () => {
+    await applySpiderfootModuleOptions(effectiveTransport, moduleOptions);
     const startPayload = await effectiveTransport.postJson("/startscan", {
       scanname: spiderfootScanName(companyName, providerId),
-      scantarget: companyName,
-      modulelist: "",
-      typelist: providerId === "spiderfoot_deep" ? DEEP_EVENT_TYPES : PASSIVE_EVENT_TYPES,
-      usecase: "passive",
+      scantarget: scanTarget,
+      modulelist: scanConfig.modulelist,
+      typelist: scanConfig.typelist,
+      usecase: scanConfig.usecase,
     });
 
     if (!Array.isArray(startPayload) || startPayload[0] !== "SUCCESS" || typeof startPayload[1] !== "string") {
@@ -706,6 +974,7 @@ export async function pollSpiderfootJob(jobId: string, { transport, env = proces
 
     addProgressLogs(job, scanLog);
     mergeEventRows(job, scanEvents);
+    normalizeStoredImpersonationCandidates(job.provider_result);
 
     const scanState = Array.isArray(scanStatus) ? String(scanStatus[5] || "RUNNING") : "RUNNING";
     finalizeJobState(job, scanState);
@@ -731,6 +1000,7 @@ export async function pollSpiderfootJob(jobId: string, { transport, env = proces
 export function getSpiderfootJob(jobId: string): SpiderfootJob | undefined {
   const job = jobs.get(jobId);
   if (!job) return undefined;
+  normalizeStoredImpersonationCandidates(job.provider_result);
   refreshElapsed(job);
   return job;
 }

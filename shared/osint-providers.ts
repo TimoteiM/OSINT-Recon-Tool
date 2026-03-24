@@ -187,20 +187,20 @@ export const osintProviders: OsintProvider[] = [
     limits: "Currently used only for website discovery in the app.",
   },
   {
-    id: "google",
-    label: "Google",
-    category: "Discovery",
+    id: "google_dorks",
+    label: "Google Dorks",
+    category: "Breaches & Leaks",
     status: "limited",
-    evidence: ["websites", "social", "emails"],
-    auth: "none",
-    cost: "Free",
-    reliability: "fragile",
+    evidence: ["websites", "social", "emails", "breaches"],
+    auth: "required",
+    cost: "Brave API key required",
+    reliability: "stable",
     implementation: "external",
     selectable: true,
     defaultSelected: false,
-    details: "HTML search scraping for website discovery, mention capture, email dorks, and social-profile search.",
-    whyKeep: "High-value search coverage for broad mentions and identity discovery.",
-    limits: "Public scraping is challenge-prone and should be treated as best effort.",
+    details: "Bounded dork-based intelligence using Brave Search API to find exposed documents, public emails, social references, and administrative surfaces.",
+    whyKeep: "Adds a search-based intelligence layer without scraping Google directly, with reusable dork categories and normalized findings.",
+    limits: "Coverage depends on Brave index quality and API limits; only bounded curated dorks are executed.",
   },
   {
     id: "wikidata",
@@ -995,9 +995,7 @@ export function getSelectableProviderIds(): string[] {
 }
 
 export function getDefaultSelectedProviderIds(): string[] {
-  return osintProviders
-    .filter((provider) => provider.selectable && provider.defaultSelected)
-    .map((provider) => provider.id);
+  return getSelectableProviderIds();
 }
 
 export function isKnownProviderId(id: string): boolean {
@@ -1009,7 +1007,19 @@ export function sanitizeSelectedProviderIds(sourceIds: unknown): string[] {
     return [];
   }
 
-  const uniqueIds = Array.from(new Set(sourceIds.filter((value): value is string => typeof value === "string")));
+  const uniqueIds = Array.from(new Set(
+    sourceIds
+      .filter((value): value is string => typeof value === "string")
+      .map((id) => id === "google" ? "google_dorks" : id),
+  ));
 
   return uniqueIds.filter((id) => isKnownProviderId(id));
+}
+
+export function serializeSelectedProviderIdsForRequest(sourceIds: string[]): string[] {
+  return sourceIds.map((id) => (id === "google_dorks" ? "google" : id));
+}
+
+export function stripSpiderfootProviderIds(sourceIds: string[]): string[] {
+  return sourceIds.filter((id) => id !== "spiderfoot" && id !== "spiderfoot_deep");
 }

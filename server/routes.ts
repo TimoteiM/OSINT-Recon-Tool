@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import type { Server } from "http";
 import { runRecon } from "./recon-runner";
-import { getDefaultSelectedProviderIds, sanitizeSelectedProviderIds } from "@shared/osint-providers";
+import { getDefaultSelectedProviderIds, isKnownProviderId, sanitizeSelectedProviderIds } from "@shared/osint-providers";
 import { createRunningSpiderfootProviderResult, getSpiderfootJob, startSpiderfootJob } from "./spiderfoot-jobs";
 
 export function splitSpiderfootSelection(selectedSources: string[]): {
@@ -39,6 +39,55 @@ export function normalizeReconError(error: unknown): {
   return { status: 500, body: { error: "Unknown recon failure" } };
 }
 
+export function hasInvalidRequestedProviderIds(sources: unknown): boolean {
+  if (!Array.isArray(sources) || sources.length === 0) {
+    return false;
+  }
+
+  return sources.some((value) => {
+    if (typeof value !== "string") {
+      return true;
+    }
+    const normalized = value === "google" ? "google_dorks" : value;
+    return !isKnownProviderId(normalized);
+  });
+}
+
+function createSpiderfootErrorProviderResult(message: string) {
+  return {
+    ...createRunningSpiderfootProviderResult(),
+    status: "error",
+    notes: [message],
+    progress_logs: [],
+  };
+}
+
+export async function attachSpiderfootBackgroundScan(
+  report: Record<string, any>,
+  companyName: string,
+  backgroundProviderId: "spiderfoot" | "spiderfoot_deep",
+  startJob: typeof startSpiderfootJob = startSpiderfootJob,
+): Promise<void> {
+  report.provider_results = report.provider_results || {};
+
+  try {
+    const job = await startJob({ companyName, providerId: backgroundProviderId });
+    report.provider_results[backgroundProviderId] = createRunningSpiderfootProviderResult();
+    report.spiderfoot_job = {
+      job_id: job.job_id,
+      provider_id: job.provider_id,
+      scan_id: job.scan_id,
+      status: job.status,
+      started_at: job.started_at,
+    };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown SpiderFoot startup failure";
+    report.provider_results[backgroundProviderId] = createSpiderfootErrorProviderResult(
+      `SpiderFoot startup failed: ${message}`,
+    );
+  }
+}
+
 export async function registerRoutes(_httpServer: Server, app: Express): Promise<void> {
   // POST /api/recon — run the Python OSINT engine
   app.post("/api/recon", async (req, res) => {
@@ -49,7 +98,7 @@ export async function registerRoutes(_httpServer: Server, app: Express): Promise
     const companyName = company.trim();
     const selectedSources = sanitizeSelectedProviderIds(sources);
 
-    if (Array.isArray(sources) && sources.length > 0 && selectedSources.length !== new Set(sources).size) {
+    if (hasInvalidRequestedProviderIds(sources)) {
       return res.status(400).json({ error: "One or more provider IDs are invalid." });
     }
 
@@ -63,16 +112,7 @@ export async function registerRoutes(_httpServer: Server, app: Express): Promise
       const report = result.data as Record<string, any>;
 
       if (backgroundProviderId) {
-        const job = await startSpiderfootJob({ companyName, providerId: backgroundProviderId });
-        report.provider_results = report.provider_results || {};
-        report.provider_results[backgroundProviderId] = createRunningSpiderfootProviderResult();
-        report.spiderfoot_job = {
-          job_id: job.job_id,
-          provider_id: job.provider_id,
-          scan_id: job.scan_id,
-          status: job.status,
-          started_at: job.started_at,
-        };
+        await attachSpiderfootBackgroundScan(report, companyName, backgroundProviderId);
       }
 
       return res.json({ success: true, ...result });

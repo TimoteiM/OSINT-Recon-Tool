@@ -28,6 +28,7 @@ import dns.zone
 import dns.query
 import whois as whois_lib
 from ipwhois import IPWhois
+from google_dork_provider import GoogleDorkProvider
 
 try:
     from rocketreach import Gateway as RocketReachGateway
@@ -57,7 +58,12 @@ def _selected_sources() -> Optional[set]:
     if not isinstance(parsed, list):
         return None
 
-    return {item for item in parsed if isinstance(item, str)}
+    normalized = set()
+    for item in parsed:
+        if not isinstance(item, str):
+            continue
+        normalized.add("google_dorks" if item == "google" else item)
+    return normalized
 
 
 def source_enabled(source_id: str) -> bool:
@@ -97,6 +103,7 @@ def ensure_provider_result(provider_results: dict, provider_id: str) -> dict:
             "ports": [],
             "hosting": [],
             "mentions": [],
+            "findings": [],
         }
     return provider_results[provider_id]
 
@@ -454,6 +461,74 @@ def _record_search_provider_evidence(
     return emails
 
 
+def _google_dork_mentions_from_findings(findings: list[dict], domain: str) -> list[dict]:
+    mentions = []
+    for finding in findings:
+        mention = classify_search_mention(
+            {
+                "url": finding.get("url", ""),
+                "title": finding.get("title", ""),
+                "description": finding.get("snippet", ""),
+            },
+            domain,
+            finding.get("query", ""),
+        )
+        category = finding.get("category")
+        if category:
+            mention["category"] = category
+        mentions.append(mention)
+    return mentions
+
+
+def run_google_dorks(domain: str, provider_results: Optional[dict] = None, mode: str = "light") -> dict:
+    findings_result = {"emails": set(), "mentions": [], "findings": []}
+    provider_id = "google_dorks"
+
+    if not source_enabled(provider_id):
+        if provider_results is not None:
+            mark_provider_skipped(provider_results, provider_id, "Provider not selected")
+        return findings_result
+
+    api_key = os.environ.get("BRAVE_SEARCH_API_KEY", "").strip()
+    if not api_key:
+        if provider_results is not None:
+            mark_provider_skipped(provider_results, provider_id, "BRAVE_SEARCH_API_KEY is not configured")
+        return findings_result
+
+    started_at = time.perf_counter()
+    provider = GoogleDorkProvider(api_key)
+
+    try:
+        raw_results = provider.run(domain, mode=mode)
+        normalized = provider.normalize(raw_results)
+        mentions = _google_dork_mentions_from_findings(normalized, domain)
+        emails = {
+            email.lower()
+            for finding in normalized
+            for email in EMAIL_RE.findall(finding.get("snippet", "") or "")
+            if domain in email.lower()
+        }
+
+        findings_result["emails"] = emails
+        findings_result["mentions"] = mentions
+        findings_result["findings"] = normalized
+
+        if provider_results is not None:
+            record_provider_result(provider_results, provider_id, "emails", sorted(emails))
+            record_provider_result(provider_results, provider_id, "mentions", mentions)
+            record_provider_result(provider_results, provider_id, "findings", normalized)
+            if not normalized:
+                note_provider_status(provider_results, provider_id, "No matching evidence found in Google Dorks results")
+            for note in provider.notes:
+                record_provider_note(provider_results, provider_id, note)
+    except Exception as exc:
+        note_provider_status(provider_results, provider_id, f"Google Dorks provider failed: {exc}", error=True)
+    finally:
+        record_provider_timing(provider_results, provider_id, _elapsed_ms(started_at))
+
+    return findings_result
+
+
 def _record_google_provider_evidence(
     response_text: str,
     domain: str,
@@ -772,21 +847,6 @@ def find_website(company_name: str) -> dict:
                             return result
         except Exception as e:
             log(f"Bing scrape failed: {e}")
-
-    if source_enabled("google"):
-        try:
-            q = requests.utils.quote(f"{company_name} official website")
-            r = safe_get(f"https://www.google.com/search?q={q}", timeout=12)
-            if r is not None and r.status_code == 200:
-                for item in _extract_google_results(r.text):
-                    href = item.get("url", "")
-                    domain = _extract_domain_from_url(href)
-                    if domain and "." in domain and _is_valid_domain(domain):
-                        result.update({"url": href, "domain": domain, "found_via": "google_search"})
-                        log(f"Google search: {domain}")
-                        return result
-        except Exception as e:
-            log(f"Google scrape failed: {e}")
 
     if source_enabled("windvane"):
         try:
@@ -2691,19 +2751,6 @@ def run_emailharvest_passive(domain: str, provider_results: Optional[dict] = Non
     elif provider_results is not None:
         mark_provider_skipped(provider_results, "brave", "Provider not selected")
 
-    if source_enabled("google"):
-        try:
-            query = f'"{domain}"'
-            response = safe_get("https://www.google.com/search", params={"q": query}, timeout=10)
-            if response is not None and response.status_code == 200:
-                emails.update(_record_google_provider_evidence(response.text, domain, query, provider_results))
-            elif response is not None:
-                note_provider_status(provider_results, "google", f"HTTP {response.status_code} from google", error=response.status_code >= 400)
-        except Exception as exc:
-            note_provider_status(provider_results, "google", str(exc), error=True)
-    elif provider_results is not None:
-        mark_provider_skipped(provider_results, "google", "Provider not selected")
-
     for provider_id, base_url, param_name, query in [
         ("windvane", "https://windvane.licho.in/search", "q", f'"{domain}"'),
     ]:
@@ -2766,6 +2813,7 @@ def harvest_emails(domain: str, company_name: str) -> dict:
         "social_profiles": {},
         "impersonation_candidates": [],
         "provider_results": {},
+        "threat_intelligence": _empty_threat_intelligence(),
     }
     emails = set()
     provider_results = result["provider_results"]
@@ -2802,6 +2850,10 @@ def harvest_emails(domain: str, company_name: str) -> dict:
         record_provider_note(provider_results, "recon_ng", "No matching emails found")
     if source_enabled("rocketreach") and not provider_results.get("rocketreach", {}).get("emails"):
         record_provider_note(provider_results, "rocketreach", "No matching emails found")
+
+    google_dork_findings = run_google_dorks(domain, provider_results)
+    emails.update(google_dork_findings.get("emails", set()))
+    result["threat_intelligence"]["findings"] = google_dork_findings.get("findings", [])
 
     spiderfoot_findings = run_spiderfoot(domain, company_name, provider_results)
     emails.update(spiderfoot_findings.get("emails", set()))
@@ -3010,10 +3062,15 @@ def _empty_tech(url: str) -> dict:
 
 def _empty_identities(domain: str) -> dict:
     return {"domain": domain, "emails": [], "email_format": None,
-            "github_repos": [], "social_profiles": {}, "impersonation_candidates": [], "breaches": [], "provider_results": {}}
+            "github_repos": [], "social_profiles": {}, "impersonation_candidates": [], "breaches": [],
+            "provider_results": {}, "threat_intelligence": _empty_threat_intelligence()}
 
 def _empty_breaches(domain: str) -> dict:
     return {"domain": domain, "domain_breaches": [], "email_validation": []}
+
+
+def _empty_threat_intelligence() -> dict:
+    return {"findings": []}
 
 
 def run_recon(company_name: str) -> dict:
@@ -3038,6 +3095,7 @@ def run_recon(company_name: str) -> dict:
         "technologies": {},
         "identities": {},
         "breaches": {},
+        "threat_intelligence": _empty_threat_intelligence(),
         "provider_results": {},
         "errors": [],
         "warnings": [],
@@ -3064,7 +3122,6 @@ def run_recon(company_name: str) -> dict:
         "duckduckgo_api": "duckduckgo",
         "duckduckgo_html": "duckduckgo",
         "bing_search": "bing",
-        "google_search": "google",
         "windvane_search": "windvane",
     }
     discovery_provider_id = discovery_provider_map.get(found_via)
@@ -3075,7 +3132,7 @@ def run_recon(company_name: str) -> dict:
             "hosting",
             {"domain": domain, "url": url, "found_via": found_via},
         )
-    for provider_id in ("bing", "duckduckgo", "brave", "google", "windvane"):
+    for provider_id in ("bing", "duckduckgo", "brave", "google_dorks", "windvane"):
         if source_enabled(provider_id) and provider_id != discovery_provider_id:
             record_provider_note(report["provider_results"], provider_id, "Not used for final website match")
 
@@ -3105,6 +3162,7 @@ def run_recon(company_name: str) -> dict:
         report["technologies"] = _empty_tech("")
         report["identities"] = _empty_identities(placeholder)
         report["breaches"] = _empty_breaches(placeholder)
+        report["threat_intelligence"] = _empty_threat_intelligence()
         report["timings"]["total_ms"] = _elapsed_ms(recon_started_at)
         return report
 
@@ -3230,12 +3288,13 @@ def run_recon(company_name: str) -> dict:
             "sherlock",
             "spiderfoot",
             "duckduckgo",
-            "google",
+            "google_dorks",
             "brave",
         ):
             report["identities"] = harvest_emails(domain, company_name)
         else:
             report["identities"] = _empty_identities(domain)
+        report["threat_intelligence"] = report["identities"].get("threat_intelligence", _empty_threat_intelligence())
         identity_provider_results = report["identities"].get("provider_results", {})
         for provider_id, details in identity_provider_results.items():
             report["provider_results"][provider_id] = details
@@ -3249,6 +3308,7 @@ def run_recon(company_name: str) -> dict:
     except Exception as e:
         report["errors"].append(f"Email harvesting failed: {e}")
         report["identities"] = _empty_identities(domain)
+        report["threat_intelligence"] = _empty_threat_intelligence()
     report["timings"]["stages"]["identities"] = _elapsed_ms(stage_started_at)
 
     # ── Step 8: Breach check ──
