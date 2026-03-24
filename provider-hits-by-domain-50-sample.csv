@@ -1,0 +1,1601 @@
+domain,provider,source,status,total_hits,emails,mentions,social_profiles,subdomains,repos,breach_hints,dns_records,whois,ssl,tech,ports,hosting,notes_count,notes
+openai.com,direct_dns,saved_benchmark,ok,152,0,0,0,88,0,0,64,0,0,0,0,0,0,
+openai.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+openai.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+openai.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+openai.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+openai.com,port_scan,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,0,4,0,0,
+openai.com,tech_fingerprint,saved_benchmark,ok,3,0,0,0,0,0,0,0,0,0,3,0,0,0,
+openai.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+openai.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+openai.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+openai.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+openai.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+openai.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+openai.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+openai.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+openai.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+openai.com,github_repos,saved_benchmark,ok,17,0,0,0,0,17,0,0,0,0,0,0,0,0,
+openai.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+openai.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+openai.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+openai.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+openai.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+openai.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+openai.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+openai.com,rapiddns,saved_benchmark,ok,86,0,0,0,86,0,0,0,0,0,0,0,0,0,
+openai.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+openai.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+openai.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+openai.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+openai.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+openai.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+openai.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+microsoft.com,direct_dns,saved_benchmark,ok,196,0,0,0,129,0,0,67,0,0,0,0,0,0,
+microsoft.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+microsoft.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+microsoft.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+microsoft.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+microsoft.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+microsoft.com,tech_fingerprint,saved_benchmark,ok,3,0,0,0,0,0,0,0,0,0,3,0,0,0,
+microsoft.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+microsoft.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+microsoft.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+microsoft.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+microsoft.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+microsoft.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+microsoft.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+microsoft.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+microsoft.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+microsoft.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+microsoft.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+microsoft.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+microsoft.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+microsoft.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+microsoft.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+microsoft.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+microsoft.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+microsoft.com,rapiddns,saved_benchmark,ok,105,0,0,0,105,0,0,0,0,0,0,0,0,0,
+microsoft.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+microsoft.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+microsoft.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+microsoft.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+microsoft.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+microsoft.com,urlscan,saved_benchmark,ok,2,0,0,0,2,0,0,0,0,0,0,0,0,0,
+microsoft.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+google.com,direct_dns,saved_benchmark,ok,73,0,0,0,51,0,0,22,0,0,0,0,0,0,
+google.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+google.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+google.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+google.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+google.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+google.com,tech_fingerprint,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,2,0,0,0,
+google.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+google.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+google.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+google.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+google.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+google.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+google.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+google.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+google.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+google.com,github_repos,saved_benchmark,ok,12,0,0,0,0,12,0,0,0,0,0,0,0,0,
+google.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+google.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+google.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+google.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+google.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+google.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+google.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+google.com,rapiddns,saved_benchmark,ok,26,0,0,0,26,0,0,0,0,0,0,0,0,0,
+google.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+google.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+google.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+google.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+google.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+google.com,urlscan,saved_benchmark,ok,5,0,0,0,5,0,0,0,0,0,0,0,0,0,
+google.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,direct_dns,saved_benchmark,ok,74,0,0,0,67,0,0,7,0,0,0,0,0,0,
+amazon.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+amazon.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+amazon.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+amazon.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+amazon.com,tech_fingerprint,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+amazon.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+amazon.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+amazon.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+amazon.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+amazon.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+amazon.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+amazon.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+amazon.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+amazon.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+amazon.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+amazon.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+amazon.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,rapiddns,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching subdomains returned
+amazon.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+amazon.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amazon.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+amazon.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+amazon.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+apple.com,direct_dns,saved_benchmark,ok,158,0,0,0,123,0,0,35,0,0,0,0,0,0,
+apple.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+apple.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+apple.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+apple.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+apple.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+apple.com,tech_fingerprint,saved_benchmark,ok,3,0,0,0,0,0,0,0,0,0,3,0,0,0,
+apple.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+apple.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+apple.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+apple.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+apple.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+apple.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+apple.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+apple.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+apple.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+apple.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+apple.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+apple.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+apple.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+apple.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+apple.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+apple.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+apple.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+apple.com,rapiddns,saved_benchmark,ok,111,0,0,0,111,0,0,0,0,0,0,0,0,0,
+apple.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+apple.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+apple.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+apple.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+apple.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+apple.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+apple.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+meta.com,direct_dns,saved_benchmark,ok,80,0,0,0,73,0,0,7,0,0,0,0,0,0,
+meta.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+meta.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+meta.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+meta.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+meta.com,port_scan,saved_benchmark,ok,13,0,0,0,0,0,0,0,0,0,0,13,0,0,
+meta.com,tech_fingerprint,saved_benchmark,ok,3,0,0,0,0,0,0,0,0,0,3,0,0,0,
+meta.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+meta.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+meta.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+meta.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+meta.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+meta.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+meta.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+meta.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+meta.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+meta.com,github_repos,saved_benchmark,ok,16,0,0,0,0,16,0,0,0,0,0,0,0,0,
+meta.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+meta.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+meta.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+meta.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+meta.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+meta.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+meta.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+meta.com,rapiddns,saved_benchmark,ok,7,0,0,0,7,0,0,0,0,0,0,0,0,0,
+meta.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+meta.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+meta.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+meta.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+meta.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+meta.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+meta.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,direct_dns,saved_benchmark,ok,6,0,0,0,1,0,0,5,0,0,0,0,0,0,
+netflix.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+netflix.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+netflix.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+netflix.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+netflix.com,tech_fingerprint,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+netflix.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+netflix.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+netflix.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+netflix.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+netflix.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+netflix.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+netflix.com,github_repos,saved_benchmark,error,5,0,0,0,0,5,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+netflix.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+netflix.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+netflix.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+netflix.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+netflix.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,rapiddns,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching subdomains returned
+netflix.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+netflix.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+netflix.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+netflix.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+adobe.com,direct_dns,saved_benchmark,ok,236,0,0,0,150,0,0,86,0,0,0,0,0,0,
+adobe.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+adobe.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+adobe.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+adobe.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+adobe.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+adobe.com,tech_fingerprint,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+adobe.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+adobe.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+adobe.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+adobe.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+adobe.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+adobe.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+adobe.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+adobe.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+adobe.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+adobe.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+adobe.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+adobe.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+adobe.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+adobe.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+adobe.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+adobe.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+adobe.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+adobe.com,rapiddns,saved_benchmark,ok,110,0,0,0,110,0,0,0,0,0,0,0,0,0,
+adobe.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+adobe.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+adobe.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+adobe.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+adobe.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+adobe.com,urlscan,saved_benchmark,ok,20,0,0,0,20,0,0,0,0,0,0,0,0,0,
+adobe.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cloudflare.com,direct_dns,saved_benchmark,ok,93,0,0,0,43,0,0,50,0,0,0,0,0,0,
+cloudflare.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cloudflare.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+cloudflare.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+cloudflare.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+cloudflare.com,port_scan,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,0,4,0,0,
+cloudflare.com,tech_fingerprint,saved_benchmark,ok,3,0,0,0,0,0,0,0,0,0,3,0,0,0,
+cloudflare.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+cloudflare.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+cloudflare.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cloudflare.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+cloudflare.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cloudflare.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+cloudflare.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+cloudflare.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+cloudflare.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+cloudflare.com,github_repos,saved_benchmark,error,6,0,0,0,0,6,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+cloudflare.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+cloudflare.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+cloudflare.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+cloudflare.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cloudflare.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+cloudflare.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cloudflare.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cloudflare.com,rapiddns,saved_benchmark,ok,35,0,0,0,35,0,0,0,0,0,0,0,0,0,
+cloudflare.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+cloudflare.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cloudflare.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cloudflare.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cloudflare.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+cloudflare.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+cloudflare.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+salesforce.com,direct_dns,saved_benchmark,ok,192,0,0,0,139,0,0,53,0,0,0,0,0,0,
+salesforce.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+salesforce.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+salesforce.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+salesforce.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+salesforce.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+salesforce.com,tech_fingerprint,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,4,0,0,0,
+salesforce.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+salesforce.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+salesforce.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+salesforce.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+salesforce.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+salesforce.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+salesforce.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+salesforce.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+salesforce.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+salesforce.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+salesforce.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+salesforce.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+salesforce.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+salesforce.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+salesforce.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+salesforce.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+salesforce.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+salesforce.com,rapiddns,saved_benchmark,ok,106,0,0,0,106,0,0,0,0,0,0,0,0,0,
+salesforce.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+salesforce.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+salesforce.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+salesforce.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+salesforce.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+salesforce.com,urlscan,saved_benchmark,ok,19,0,0,0,19,0,0,0,0,0,0,0,0,0,
+salesforce.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+oracle.com,direct_dns,saved_benchmark,ok,199,0,0,0,138,0,0,61,0,0,0,0,0,0,
+oracle.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+oracle.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+oracle.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+oracle.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+oracle.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+oracle.com,tech_fingerprint,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,2,0,0,0,
+oracle.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+oracle.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+oracle.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+oracle.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+oracle.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+oracle.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+oracle.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+oracle.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+oracle.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+oracle.com,github_repos,saved_benchmark,error,13,0,0,0,0,13,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+oracle.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+oracle.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+oracle.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+oracle.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+oracle.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+oracle.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+oracle.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+oracle.com,rapiddns,saved_benchmark,ok,120,0,0,0,120,0,0,0,0,0,0,0,0,0,
+oracle.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+oracle.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+oracle.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+oracle.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+oracle.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+oracle.com,urlscan,saved_benchmark,ok,6,0,0,0,6,0,0,0,0,0,0,0,0,0,
+oracle.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ibm.com,direct_dns,saved_benchmark,ok,194,0,0,0,141,0,0,53,0,0,0,0,0,0,
+ibm.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ibm.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+ibm.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+ibm.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+ibm.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+ibm.com,tech_fingerprint,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,2,0,0,0,
+ibm.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+ibm.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+ibm.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ibm.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+ibm.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ibm.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+ibm.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+ibm.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+ibm.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+ibm.com,github_repos,saved_benchmark,ok,18,0,0,0,0,18,0,0,0,0,0,0,0,0,
+ibm.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+ibm.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+ibm.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+ibm.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ibm.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+ibm.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ibm.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ibm.com,rapiddns,saved_benchmark,ok,106,0,0,0,106,0,0,0,0,0,0,0,0,0,
+ibm.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+ibm.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ibm.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ibm.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ibm.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+ibm.com,urlscan,saved_benchmark,ok,24,0,0,0,24,0,0,0,0,0,0,0,0,0,
+ibm.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+intel.com,direct_dns,saved_benchmark,ok,188,0,0,0,133,0,0,55,0,0,0,0,0,0,
+intel.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+intel.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+intel.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+intel.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+intel.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+intel.com,tech_fingerprint,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,1,0,0,0,
+intel.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+intel.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+intel.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+intel.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+intel.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+intel.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+intel.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+intel.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+intel.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+intel.com,github_repos,saved_benchmark,ok,15,0,0,0,0,15,0,0,0,0,0,0,0,0,
+intel.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+intel.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+intel.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+intel.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+intel.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+intel.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+intel.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+intel.com,rapiddns,saved_benchmark,ok,105,0,0,0,105,0,0,0,0,0,0,0,0,0,
+intel.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+intel.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+intel.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+intel.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+intel.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+intel.com,urlscan,saved_benchmark,ok,17,0,0,0,17,0,0,0,0,0,0,0,0,0,
+intel.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amd.com,direct_dns,saved_benchmark,ok,157,0,0,0,110,0,0,47,0,0,0,0,0,0,
+amd.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amd.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+amd.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+amd.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+amd.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+amd.com,tech_fingerprint,saved_benchmark,ok,3,0,0,0,0,0,0,0,0,0,3,0,0,0,
+amd.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+amd.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+amd.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amd.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+amd.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amd.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+amd.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+amd.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+amd.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+amd.com,github_repos,saved_benchmark,error,5,0,0,0,0,5,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+amd.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+amd.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+amd.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+amd.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amd.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+amd.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amd.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amd.com,rapiddns,saved_benchmark,ok,93,0,0,0,93,0,0,0,0,0,0,0,0,0,
+amd.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+amd.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amd.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amd.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+amd.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+amd.com,urlscan,saved_benchmark,ok,12,0,0,0,12,0,0,0,0,0,0,0,0,0,
+amd.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nvidia.com,direct_dns,saved_benchmark,ok,198,0,0,0,120,0,0,78,0,0,0,0,0,0,
+nvidia.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nvidia.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+nvidia.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+nvidia.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+nvidia.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+nvidia.com,tech_fingerprint,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,4,0,0,0,
+nvidia.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+nvidia.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+nvidia.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nvidia.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+nvidia.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+nvidia.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+nvidia.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+nvidia.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+nvidia.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+nvidia.com,github_repos,saved_benchmark,ok,15,0,0,0,0,15,0,0,0,0,0,0,0,0,
+nvidia.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+nvidia.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+nvidia.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+nvidia.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nvidia.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+nvidia.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nvidia.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nvidia.com,rapiddns,saved_benchmark,ok,95,0,0,0,95,0,0,0,0,0,0,0,0,0,
+nvidia.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+nvidia.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nvidia.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nvidia.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nvidia.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+nvidia.com,urlscan,saved_benchmark,ok,10,0,0,0,10,0,0,0,0,0,0,0,0,0,
+nvidia.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cisco.com,direct_dns,saved_benchmark,ok,277,0,0,0,175,0,0,102,0,0,0,0,0,0,
+cisco.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cisco.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+cisco.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+cisco.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+cisco.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+cisco.com,tech_fingerprint,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,4,0,0,0,
+cisco.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+cisco.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+cisco.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cisco.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+cisco.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cisco.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+cisco.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+cisco.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+cisco.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+cisco.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+cisco.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+cisco.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+cisco.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+cisco.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cisco.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+cisco.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cisco.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cisco.com,rapiddns,saved_benchmark,ok,135,0,0,0,135,0,0,0,0,0,0,0,0,0,
+cisco.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+cisco.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cisco.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cisco.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+cisco.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+cisco.com,urlscan,saved_benchmark,ok,18,0,0,0,18,0,0,0,0,0,0,0,0,0,
+cisco.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+zoom.us,direct_dns,saved_benchmark,ok,80,0,0,0,70,0,0,10,0,0,0,0,0,0,
+zoom.us,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+zoom.us,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+zoom.us,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+zoom.us,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+zoom.us,port_scan,saved_benchmark,ok,12,0,0,0,0,0,0,0,0,0,0,12,0,0,
+zoom.us,tech_fingerprint,saved_benchmark,ok,6,0,0,0,0,0,0,0,0,0,6,0,0,0,
+zoom.us,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+zoom.us,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+zoom.us,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+zoom.us,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+zoom.us,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+zoom.us,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+zoom.us,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+zoom.us,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+zoom.us,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+zoom.us,github_repos,saved_benchmark,ok,11,0,0,0,0,11,0,0,0,0,0,0,0,0,
+zoom.us,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+zoom.us,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+zoom.us,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+zoom.us,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+zoom.us,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+zoom.us,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+zoom.us,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+zoom.us,rapiddns,saved_benchmark,ok,5,0,0,0,5,0,0,0,0,0,0,0,0,0,
+zoom.us,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+zoom.us,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+zoom.us,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+zoom.us,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+zoom.us,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+zoom.us,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+zoom.us,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+slack.com,direct_dns,saved_benchmark,ok,105,0,0,0,74,0,0,31,0,0,0,0,0,0,
+slack.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+slack.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+slack.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+slack.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+slack.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+slack.com,tech_fingerprint,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,4,0,0,0,
+slack.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+slack.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+slack.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+slack.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+slack.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+slack.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+slack.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+slack.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+slack.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+slack.com,github_repos,saved_benchmark,error,15,0,0,0,0,15,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+slack.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+slack.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+slack.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+slack.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+slack.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+slack.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+slack.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+slack.com,rapiddns,saved_benchmark,ok,9,0,0,0,9,0,0,0,0,0,0,0,0,0,
+slack.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+slack.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+slack.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+slack.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+slack.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+slack.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+slack.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+atlassian.com,direct_dns,saved_benchmark,ok,159,0,0,0,49,0,0,110,0,0,0,0,0,0,
+atlassian.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+atlassian.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+atlassian.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+atlassian.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+atlassian.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+atlassian.com,tech_fingerprint,saved_benchmark,ok,5,0,0,0,0,0,0,0,0,0,5,0,0,0,
+atlassian.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+atlassian.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+atlassian.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+atlassian.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+atlassian.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+atlassian.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+atlassian.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+atlassian.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+atlassian.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+atlassian.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+atlassian.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+atlassian.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+atlassian.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+atlassian.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+atlassian.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+atlassian.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+atlassian.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+atlassian.com,rapiddns,saved_benchmark,ok,28,0,0,0,28,0,0,0,0,0,0,0,0,0,
+atlassian.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+atlassian.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+atlassian.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+atlassian.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+atlassian.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+atlassian.com,urlscan,saved_benchmark,ok,8,0,0,0,8,0,0,0,0,0,0,0,0,0,
+atlassian.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+shopify.com,direct_dns,saved_benchmark,ok,223,0,0,0,164,0,0,59,0,0,0,0,0,0,
+shopify.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+shopify.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+shopify.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+shopify.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+shopify.com,port_scan,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,0,4,0,0,
+shopify.com,tech_fingerprint,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,4,0,0,0,
+shopify.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+shopify.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+shopify.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+shopify.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+shopify.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+shopify.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+shopify.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+shopify.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+shopify.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+shopify.com,github_repos,saved_benchmark,ok,17,0,0,0,0,17,0,0,0,0,0,0,0,0,
+shopify.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+shopify.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+shopify.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+shopify.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+shopify.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+shopify.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+shopify.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+shopify.com,rapiddns,saved_benchmark,ok,100,0,0,0,100,0,0,0,0,0,0,0,0,0,
+shopify.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+shopify.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+shopify.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+shopify.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+shopify.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+shopify.com,urlscan,saved_benchmark,ok,1,0,0,0,1,0,0,0,0,0,0,0,0,0,
+shopify.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+paypal.com,direct_dns,saved_benchmark,ok,132,0,0,0,107,0,0,25,0,0,0,0,0,0,
+paypal.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+paypal.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+paypal.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+paypal.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+paypal.com,port_scan,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,0,4,0,0,
+paypal.com,tech_fingerprint,saved_benchmark,ok,6,0,0,0,0,0,0,0,0,0,6,0,0,0,
+paypal.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+paypal.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+paypal.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+paypal.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+paypal.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+paypal.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+paypal.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+paypal.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+paypal.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+paypal.com,github_repos,saved_benchmark,ok,16,0,0,0,0,16,0,0,0,0,0,0,0,0,
+paypal.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+paypal.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+paypal.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+paypal.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+paypal.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+paypal.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+paypal.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+paypal.com,rapiddns,saved_benchmark,ok,92,0,0,0,92,0,0,0,0,0,0,0,0,0,
+paypal.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+paypal.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+paypal.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+paypal.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+paypal.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+paypal.com,urlscan,saved_benchmark,ok,2,0,0,0,2,0,0,0,0,0,0,0,0,0,
+paypal.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+stripe.com,direct_dns,saved_benchmark,ok,88,0,0,0,40,0,0,48,0,0,0,0,0,0,
+stripe.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+stripe.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+stripe.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+stripe.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+stripe.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+stripe.com,tech_fingerprint,saved_benchmark,ok,7,0,0,0,0,0,0,0,0,0,7,0,0,0,
+stripe.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+stripe.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+stripe.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+stripe.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+stripe.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+stripe.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+stripe.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+stripe.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+stripe.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+stripe.com,github_repos,saved_benchmark,ok,16,0,0,0,0,16,0,0,0,0,0,0,0,0,
+stripe.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+stripe.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+stripe.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+stripe.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+stripe.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+stripe.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+stripe.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+stripe.com,rapiddns,saved_benchmark,ok,29,0,0,0,29,0,0,0,0,0,0,0,0,0,
+stripe.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+stripe.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+stripe.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+stripe.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+stripe.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+stripe.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+stripe.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+visa.com,direct_dns,saved_benchmark,ok,74,0,0,0,67,0,0,7,0,0,0,0,0,0,
+visa.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+visa.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+visa.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+visa.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+visa.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+visa.com,tech_fingerprint,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,1,0,0,0,
+visa.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+visa.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+visa.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+visa.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+visa.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+visa.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+visa.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+visa.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+visa.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+visa.com,github_repos,saved_benchmark,error,15,0,0,0,0,15,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+visa.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+visa.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+visa.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+visa.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+visa.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+visa.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+visa.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+visa.com,rapiddns,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching subdomains returned
+visa.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+visa.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+visa.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+visa.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+visa.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+visa.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+visa.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+mastercard.com,direct_dns,saved_benchmark,ok,190,0,0,0,138,0,0,52,0,0,0,0,0,0,
+mastercard.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+mastercard.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+mastercard.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+mastercard.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+mastercard.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+mastercard.com,tech_fingerprint,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,1,0,0,0,
+mastercard.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+mastercard.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+mastercard.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+mastercard.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+mastercard.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+mastercard.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+mastercard.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+mastercard.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+mastercard.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+mastercard.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+mastercard.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+mastercard.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+mastercard.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+mastercard.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+mastercard.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+mastercard.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+mastercard.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+mastercard.com,rapiddns,saved_benchmark,ok,101,0,0,0,101,0,0,0,0,0,0,0,0,0,
+mastercard.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+mastercard.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+mastercard.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+mastercard.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+mastercard.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+mastercard.com,urlscan,saved_benchmark,ok,25,0,0,0,25,0,0,0,0,0,0,0,0,0,
+mastercard.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,direct_dns,saved_benchmark,ok,147,0,0,0,115,0,0,32,0,0,0,0,0,0,
+jpmorganchase.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+jpmorganchase.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+jpmorganchase.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+jpmorganchase.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+jpmorganchase.com,tech_fingerprint,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,1,0,0,0,
+jpmorganchase.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+jpmorganchase.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+jpmorganchase.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+jpmorganchase.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+jpmorganchase.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+jpmorganchase.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+jpmorganchase.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+jpmorganchase.com,github_repos,saved_benchmark,error,2,0,0,0,0,2,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+jpmorganchase.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+jpmorganchase.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+jpmorganchase.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+jpmorganchase.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+jpmorganchase.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,rapiddns,saved_benchmark,ok,96,0,0,0,96,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+jpmorganchase.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+jpmorganchase.com,urlscan,saved_benchmark,ok,18,0,0,0,18,0,0,0,0,0,0,0,0,0,
+jpmorganchase.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,direct_dns,saved_benchmark,ok,44,0,0,0,22,0,0,22,0,0,0,0,0,0,
+goldmansachs.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+goldmansachs.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+goldmansachs.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+goldmansachs.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+goldmansachs.com,tech_fingerprint,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,2,0,0,0,
+goldmansachs.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+goldmansachs.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+goldmansachs.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+goldmansachs.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+goldmansachs.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+goldmansachs.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+goldmansachs.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+goldmansachs.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+goldmansachs.com,github_repos,saved_benchmark,ok,8,0,0,0,0,8,0,0,0,0,0,0,0,0,
+goldmansachs.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+goldmansachs.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+goldmansachs.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+goldmansachs.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+goldmansachs.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,rapiddns,saved_benchmark,ok,22,0,0,0,22,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+goldmansachs.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+goldmansachs.com,urlscan,saved_benchmark,ok,1,0,0,0,1,0,0,0,0,0,0,0,0,0,
+goldmansachs.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+walmart.com,direct_dns,saved_benchmark,ok,191,0,0,0,137,0,0,54,0,0,0,0,0,0,
+walmart.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+walmart.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+walmart.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+walmart.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+walmart.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+walmart.com,tech_fingerprint,saved_benchmark,ok,3,0,0,0,0,0,0,0,0,0,3,0,0,0,
+walmart.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+walmart.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+walmart.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+walmart.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+walmart.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+walmart.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+walmart.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+walmart.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+walmart.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+walmart.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+walmart.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+walmart.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+walmart.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+walmart.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+walmart.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+walmart.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+walmart.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+walmart.com,rapiddns,saved_benchmark,ok,116,0,0,0,116,0,0,0,0,0,0,0,0,0,
+walmart.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+walmart.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+walmart.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+walmart.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+walmart.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+walmart.com,urlscan,saved_benchmark,ok,16,0,0,0,16,0,0,0,0,0,0,0,0,0,
+walmart.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+target.com,direct_dns,saved_benchmark,ok,132,0,0,0,92,0,0,40,0,0,0,0,0,0,
+target.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+target.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+target.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+target.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+target.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+target.com,tech_fingerprint,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,1,0,0,0,
+target.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+target.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+target.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+target.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+target.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+target.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+target.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+target.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+target.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+target.com,github_repos,saved_benchmark,ok,16,0,0,0,0,16,0,0,0,0,0,0,0,0,
+target.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+target.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+target.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+target.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+target.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+target.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+target.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+target.com,rapiddns,saved_benchmark,ok,85,0,0,0,85,0,0,0,0,0,0,0,0,0,
+target.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+target.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+target.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+target.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+target.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+target.com,urlscan,saved_benchmark,ok,2,0,0,0,2,0,0,0,0,0,0,0,0,0,
+target.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,direct_dns,saved_benchmark,ok,122,0,0,0,80,0,0,42,0,0,0,0,0,0,
+costco.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+costco.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+costco.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+costco.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+costco.com,tech_fingerprint,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,1,0,0,0,
+costco.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+costco.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+costco.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+costco.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+costco.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+costco.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+costco.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+costco.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+costco.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+costco.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+costco.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+costco.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+costco.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,rapiddns,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+costco.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+costco.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+costco.com,urlscan,saved_benchmark,ok,76,0,0,0,76,0,0,0,0,0,0,0,0,0,
+costco.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ikea.com,direct_dns,saved_benchmark,ok,72,0,0,0,17,0,0,55,0,0,0,0,0,0,
+ikea.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ikea.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+ikea.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+ikea.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+ikea.com,port_scan,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,0,4,0,0,
+ikea.com,tech_fingerprint,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,4,0,0,0,
+ikea.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+ikea.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+ikea.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ikea.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+ikea.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+ikea.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+ikea.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+ikea.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+ikea.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+ikea.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+ikea.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+ikea.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+ikea.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+ikea.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ikea.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+ikea.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ikea.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ikea.com,rapiddns,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ikea.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+ikea.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ikea.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ikea.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+ikea.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+ikea.com,urlscan,saved_benchmark,ok,11,0,0,0,11,0,0,0,0,0,0,0,0,0,
+ikea.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,direct_dns,saved_benchmark,ok,6,0,0,0,1,0,0,5,0,0,0,0,0,0,
+booking.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+booking.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+booking.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+booking.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+booking.com,tech_fingerprint,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+booking.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+booking.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+booking.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+booking.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+booking.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+booking.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+booking.com,github_repos,saved_benchmark,ok,11,0,0,0,0,11,0,0,0,0,0,0,0,0,
+booking.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+booking.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+booking.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+booking.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+booking.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,rapiddns,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching subdomains returned
+booking.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+booking.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+booking.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+booking.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+booking.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+airbnb.com,direct_dns,saved_benchmark,ok,156,0,0,0,99,0,0,57,0,0,0,0,0,0,
+airbnb.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+airbnb.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+airbnb.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+airbnb.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+airbnb.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+airbnb.com,tech_fingerprint,saved_benchmark,ok,5,0,0,0,0,0,0,0,0,0,5,0,0,0,
+airbnb.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+airbnb.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+airbnb.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+airbnb.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+airbnb.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+airbnb.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+airbnb.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+airbnb.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+airbnb.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+airbnb.com,github_repos,saved_benchmark,error,5,0,0,0,0,5,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+airbnb.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+airbnb.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+airbnb.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+airbnb.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+airbnb.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+airbnb.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+airbnb.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+airbnb.com,rapiddns,saved_benchmark,ok,94,0,0,0,94,0,0,0,0,0,0,0,0,0,
+airbnb.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+airbnb.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+airbnb.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+airbnb.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+airbnb.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+airbnb.com,urlscan,saved_benchmark,ok,2,0,0,0,2,0,0,0,0,0,0,0,0,0,
+airbnb.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+uber.com,direct_dns,saved_benchmark,ok,146,0,0,0,96,0,0,50,0,0,0,0,0,0,
+uber.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+uber.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+uber.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+uber.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+uber.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+uber.com,tech_fingerprint,saved_benchmark,ok,7,0,0,0,0,0,0,0,0,0,7,0,0,0,
+uber.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+uber.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+uber.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+uber.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+uber.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+uber.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+uber.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+uber.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+uber.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+uber.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+uber.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+uber.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+uber.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+uber.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+uber.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+uber.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+uber.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+uber.com,rapiddns,saved_benchmark,ok,68,0,0,0,68,0,0,0,0,0,0,0,0,0,
+uber.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+uber.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+uber.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+uber.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+uber.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+uber.com,urlscan,saved_benchmark,ok,18,0,0,0,18,0,0,0,0,0,0,0,0,0,
+uber.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+lyft.com,direct_dns,saved_benchmark,ok,92,0,0,0,38,0,0,54,0,0,0,0,0,0,
+lyft.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+lyft.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+lyft.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+lyft.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+lyft.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+lyft.com,tech_fingerprint,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,2,0,0,0,
+lyft.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+lyft.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+lyft.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+lyft.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+lyft.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+lyft.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+lyft.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+lyft.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+lyft.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+lyft.com,github_repos,saved_benchmark,error,7,0,0,0,0,7,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+lyft.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+lyft.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+lyft.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+lyft.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+lyft.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+lyft.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+lyft.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+lyft.com,rapiddns,saved_benchmark,ok,37,0,0,0,37,0,0,0,0,0,0,0,0,0,
+lyft.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+lyft.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+lyft.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+lyft.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+lyft.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+lyft.com,urlscan,saved_benchmark,ok,4,0,0,0,4,0,0,0,0,0,0,0,0,0,
+lyft.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,direct_dns,saved_benchmark,ok,74,0,0,0,67,0,0,7,0,0,0,0,0,0,
+delta.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+delta.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+delta.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+delta.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+delta.com,tech_fingerprint,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+delta.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+delta.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+delta.com,theharvester,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+delta.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+delta.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+delta.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+delta.com,github_repos,saved_benchmark,error,5,0,0,0,0,5,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+delta.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+delta.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+delta.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+delta.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+delta.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,rapiddns,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching subdomains returned
+delta.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+delta.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+delta.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+delta.com,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+delta.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+hilton.com,direct_dns,saved_benchmark,ok,11,0,0,0,5,0,0,6,0,0,0,0,0,0,
+hilton.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+hilton.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+hilton.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+hilton.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+hilton.com,port_scan,saved_benchmark,ok,13,0,0,0,0,0,0,0,0,0,0,13,0,0,
+hilton.com,tech_fingerprint,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,2,0,0,0,
+hilton.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+hilton.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+hilton.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+hilton.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+hilton.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+hilton.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+hilton.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+hilton.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+hilton.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+hilton.com,github_repos,saved_benchmark,ok,6,0,0,0,0,6,0,0,0,0,0,0,0,0,
+hilton.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+hilton.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+hilton.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+hilton.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+hilton.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+hilton.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+hilton.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+hilton.com,rapiddns,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching subdomains returned
+hilton.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+hilton.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+hilton.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+hilton.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+hilton.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+hilton.com,urlscan,saved_benchmark,ok,3,0,0,0,3,0,0,0,0,0,0,0,0,0,
+hilton.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+coca-colacompany.com,direct_dns,saved_benchmark,ok,35,0,0,0,25,0,0,10,0,0,0,0,0,0,
+coca-colacompany.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+coca-colacompany.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+coca-colacompany.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+coca-colacompany.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+coca-colacompany.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+coca-colacompany.com,tech_fingerprint,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,2,0,0,0,
+coca-colacompany.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+coca-colacompany.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+coca-colacompany.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+coca-colacompany.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+coca-colacompany.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+coca-colacompany.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+coca-colacompany.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+coca-colacompany.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+coca-colacompany.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+coca-colacompany.com,github_repos,saved_benchmark,error,4,0,0,0,0,4,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+coca-colacompany.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+coca-colacompany.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+coca-colacompany.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+coca-colacompany.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found in Brave results
+coca-colacompany.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+coca-colacompany.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+coca-colacompany.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+coca-colacompany.com,rapiddns,saved_benchmark,ok,24,0,0,0,24,0,0,0,0,0,0,0,0,0,
+coca-colacompany.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+coca-colacompany.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+coca-colacompany.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+coca-colacompany.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+coca-colacompany.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+coca-colacompany.com,urlscan,saved_benchmark,ok,5,0,0,0,5,0,0,0,0,0,0,0,0,0,
+coca-colacompany.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pepsico.com,direct_dns,saved_benchmark,ok,160,0,0,0,117,0,0,43,0,0,0,0,0,0,
+pepsico.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pepsico.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+pepsico.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+pepsico.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+pepsico.com,port_scan,saved_benchmark,ok,19,0,0,0,0,0,0,0,0,0,0,19,0,0,
+pepsico.com,tech_fingerprint,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,1,0,0,0,
+pepsico.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+pepsico.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+pepsico.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pepsico.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+pepsico.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+pepsico.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+pepsico.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+pepsico.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+pepsico.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+pepsico.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+pepsico.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+pepsico.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+pepsico.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+pepsico.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pepsico.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+pepsico.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pepsico.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pepsico.com,rapiddns,saved_benchmark,ok,99,0,0,0,99,0,0,0,0,0,0,0,0,0,
+pepsico.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+pepsico.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pepsico.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pepsico.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pepsico.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+pepsico.com,urlscan,saved_benchmark,ok,13,0,0,0,13,0,0,0,0,0,0,0,0,0,
+pepsico.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pfizer.com,direct_dns,saved_benchmark,ok,176,0,0,0,111,0,0,65,0,0,0,0,0,0,
+pfizer.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pfizer.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+pfizer.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+pfizer.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+pfizer.com,port_scan,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,0,4,0,0,
+pfizer.com,tech_fingerprint,saved_benchmark,ok,10,0,0,0,0,0,0,0,0,0,10,0,0,0,
+pfizer.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+pfizer.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+pfizer.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pfizer.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+pfizer.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+pfizer.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+pfizer.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+pfizer.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+pfizer.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+pfizer.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+pfizer.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+pfizer.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+pfizer.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+pfizer.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pfizer.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+pfizer.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pfizer.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pfizer.com,rapiddns,saved_benchmark,ok,98,0,0,0,98,0,0,0,0,0,0,0,0,0,
+pfizer.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+pfizer.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pfizer.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pfizer.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+pfizer.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+pfizer.com,urlscan,saved_benchmark,ok,7,0,0,0,7,0,0,0,0,0,0,0,0,0,
+pfizer.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+moderna.com,direct_dns,saved_benchmark,ok,9,0,0,0,4,0,0,5,0,0,0,0,0,0,
+moderna.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+moderna.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+moderna.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+moderna.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+moderna.com,port_scan,saved_benchmark,ok,14,0,0,0,0,0,0,0,0,0,0,14,0,0,
+moderna.com,tech_fingerprint,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,4,0,0,0,
+moderna.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+moderna.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+moderna.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+moderna.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+moderna.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+moderna.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+moderna.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+moderna.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+moderna.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+moderna.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+moderna.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+moderna.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+moderna.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+moderna.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+moderna.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+moderna.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+moderna.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+moderna.com,rapiddns,saved_benchmark,ok,2,0,0,0,2,0,0,0,0,0,0,0,0,0,
+moderna.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+moderna.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+moderna.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+moderna.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+moderna.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+moderna.com,urlscan,saved_benchmark,ok,1,0,0,0,1,0,0,0,0,0,0,0,0,0,
+moderna.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+siemens.com,direct_dns,saved_benchmark,ok,229,0,0,0,123,0,0,106,0,0,0,0,0,0,
+siemens.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+siemens.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+siemens.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+siemens.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+siemens.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+siemens.com,tech_fingerprint,saved_benchmark,ok,6,0,0,0,0,0,0,0,0,0,6,0,0,0,
+siemens.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+siemens.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+siemens.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+siemens.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+siemens.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+siemens.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+siemens.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+siemens.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+siemens.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+siemens.com,github_repos,saved_benchmark,error,5,0,0,0,0,5,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+siemens.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+siemens.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+siemens.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+siemens.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+siemens.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+siemens.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+siemens.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+siemens.com,rapiddns,saved_benchmark,ok,92,0,0,0,92,0,0,0,0,0,0,0,0,0,
+siemens.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+siemens.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+siemens.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+siemens.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+siemens.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+siemens.com,urlscan,saved_benchmark,ok,20,0,0,0,20,0,0,0,0,0,0,0,0,0,
+siemens.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+samsung.com,direct_dns,saved_benchmark,ok,173,0,0,0,117,0,0,56,0,0,0,0,0,0,
+samsung.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+samsung.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+samsung.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+samsung.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+samsung.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+samsung.com,tech_fingerprint,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,1,0,0,0,
+samsung.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+samsung.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+samsung.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+samsung.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+samsung.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+samsung.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+samsung.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+samsung.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+samsung.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+samsung.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+samsung.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+samsung.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+samsung.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+samsung.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+samsung.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+samsung.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+samsung.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+samsung.com,rapiddns,saved_benchmark,ok,100,0,0,0,100,0,0,0,0,0,0,0,0,0,
+samsung.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+samsung.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+samsung.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+samsung.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+samsung.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+samsung.com,urlscan,saved_benchmark,ok,2,0,0,0,2,0,0,0,0,0,0,0,0,0,
+samsung.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+sony.com,direct_dns,saved_benchmark,ok,190,0,0,0,122,0,0,68,0,0,0,0,0,0,
+sony.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+sony.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+sony.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+sony.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+sony.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+sony.com,tech_fingerprint,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+sony.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+sony.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+sony.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+sony.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+sony.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+sony.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+sony.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+sony.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+sony.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+sony.com,github_repos,saved_benchmark,ok,14,0,0,0,0,14,0,0,0,0,0,0,0,0,
+sony.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+sony.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+sony.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+sony.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+sony.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+sony.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+sony.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+sony.com,rapiddns,saved_benchmark,ok,99,0,0,0,99,0,0,0,0,0,0,0,0,0,
+sony.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+sony.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+sony.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+sony.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+sony.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+sony.com,urlscan,saved_benchmark,ok,17,0,0,0,17,0,0,0,0,0,0,0,0,0,
+sony.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+bbc.com,direct_dns,saved_benchmark,ok,141,0,0,0,103,0,0,38,0,0,0,0,0,0,
+bbc.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+bbc.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+bbc.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+bbc.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+bbc.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+bbc.com,tech_fingerprint,saved_benchmark,ok,4,0,0,0,0,0,0,0,0,0,4,0,0,0,
+bbc.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+bbc.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+bbc.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+bbc.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+bbc.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+bbc.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+bbc.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+bbc.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+bbc.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+bbc.com,github_repos,saved_benchmark,error,5,0,0,0,0,5,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+bbc.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+bbc.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+bbc.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+bbc.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+bbc.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+bbc.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+bbc.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+bbc.com,rapiddns,saved_benchmark,ok,97,0,0,0,97,0,0,0,0,0,0,0,0,0,
+bbc.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+bbc.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+bbc.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+bbc.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+bbc.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+bbc.com,urlscan,saved_benchmark,ok,1,0,0,0,1,0,0,0,0,0,0,0,0,0,
+bbc.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nytimes.com,direct_dns,saved_benchmark,ok,162,0,0,0,100,0,0,62,0,0,0,0,0,0,
+nytimes.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nytimes.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+nytimes.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+nytimes.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+nytimes.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+nytimes.com,tech_fingerprint,saved_benchmark,ok,3,0,0,0,0,0,0,0,0,0,3,0,0,0,
+nytimes.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+nytimes.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+nytimes.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nytimes.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+nytimes.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+nytimes.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+nytimes.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+nytimes.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+nytimes.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+nytimes.com,github_repos,saved_benchmark,error,9,0,0,0,0,9,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+nytimes.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+nytimes.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+nytimes.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+nytimes.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nytimes.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+nytimes.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nytimes.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nytimes.com,rapiddns,saved_benchmark,ok,87,0,0,0,87,0,0,0,0,0,0,0,0,0,
+nytimes.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+nytimes.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nytimes.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nytimes.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nytimes.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+nytimes.com,urlscan,saved_benchmark,ok,6,0,0,0,6,0,0,0,0,0,0,0,0,0,
+nytimes.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+reuters.com,direct_dns,saved_benchmark,ok,119,0,0,0,100,0,0,19,0,0,0,0,0,0,
+reuters.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+reuters.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+reuters.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+reuters.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+reuters.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+reuters.com,tech_fingerprint,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,1,0,0,0,
+reuters.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+reuters.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+reuters.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+reuters.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+reuters.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+reuters.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+reuters.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+reuters.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+reuters.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+reuters.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+reuters.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+reuters.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+reuters.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+reuters.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+reuters.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+reuters.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+reuters.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+reuters.com,rapiddns,saved_benchmark,ok,96,0,0,0,96,0,0,0,0,0,0,0,0,0,
+reuters.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+reuters.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+reuters.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+reuters.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+reuters.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+reuters.com,urlscan,saved_benchmark,ok,2,0,0,0,2,0,0,0,0,0,0,0,0,0,
+reuters.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+t-mobile.com,direct_dns,saved_benchmark,ok,223,0,0,0,151,0,0,72,0,0,0,0,0,0,
+t-mobile.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+t-mobile.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+t-mobile.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+t-mobile.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+t-mobile.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+t-mobile.com,tech_fingerprint,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+t-mobile.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+t-mobile.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+t-mobile.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+t-mobile.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+t-mobile.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+t-mobile.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+t-mobile.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+t-mobile.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+t-mobile.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+t-mobile.com,github_repos,saved_benchmark,ok,32,0,0,0,0,32,0,0,0,0,0,0,0,0,
+t-mobile.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+t-mobile.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+t-mobile.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+t-mobile.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+t-mobile.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+t-mobile.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+t-mobile.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+t-mobile.com,rapiddns,saved_benchmark,ok,103,0,0,0,103,0,0,0,0,0,0,0,0,0,
+t-mobile.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+t-mobile.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+t-mobile.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+t-mobile.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+t-mobile.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+t-mobile.com,urlscan,saved_benchmark,ok,30,0,0,0,30,0,0,0,0,0,0,0,0,0,
+t-mobile.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+vodafone.com,direct_dns,saved_benchmark,ok,216,0,0,0,191,0,0,25,0,0,0,0,0,0,
+vodafone.com,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+vodafone.com,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+vodafone.com,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+vodafone.com,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+vodafone.com,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+vodafone.com,tech_fingerprint,saved_benchmark,ok,5,0,0,0,0,0,0,0,0,0,5,0,0,0,
+vodafone.com,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+vodafone.com,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+vodafone.com,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+vodafone.com,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+vodafone.com,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+vodafone.com,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+vodafone.com,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+vodafone.com,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+vodafone.com,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+vodafone.com,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+vodafone.com,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+vodafone.com,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+vodafone.com,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+vodafone.com,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+vodafone.com,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+vodafone.com,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+vodafone.com,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+vodafone.com,rapiddns,saved_benchmark,ok,115,0,0,0,115,0,0,0,0,0,0,0,0,0,
+vodafone.com,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+vodafone.com,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+vodafone.com,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+vodafone.com,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+vodafone.com,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+vodafone.com,urlscan,saved_benchmark,ok,62,0,0,0,62,0,0,0,0,0,0,0,0,0,
+vodafone.com,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nasa.gov,direct_dns,saved_benchmark,ok,162,0,0,0,132,0,0,30,0,0,0,0,0,0,
+nasa.gov,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nasa.gov,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+nasa.gov,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+nasa.gov,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+nasa.gov,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+nasa.gov,tech_fingerprint,saved_benchmark,ok,5,0,0,0,0,0,0,0,0,0,5,0,0,0,
+nasa.gov,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+nasa.gov,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+nasa.gov,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nasa.gov,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+nasa.gov,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+nasa.gov,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+nasa.gov,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+nasa.gov,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+nasa.gov,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+nasa.gov,github_repos,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 403 from GitHub repo search | No matching repositories found
+nasa.gov,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+nasa.gov,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+nasa.gov,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+nasa.gov,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nasa.gov,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+nasa.gov,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nasa.gov,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nasa.gov,rapiddns,saved_benchmark,ok,112,0,0,0,112,0,0,0,0,0,0,0,0,0,
+nasa.gov,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+nasa.gov,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nasa.gov,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nasa.gov,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+nasa.gov,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+nasa.gov,urlscan,saved_benchmark,ok,8,0,0,0,8,0,0,0,0,0,0,0,0,0,
+nasa.gov,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+europa.eu,direct_dns,saved_benchmark,ok,10,0,0,0,0,0,0,10,0,0,0,0,0,0,
+europa.eu,crtsh,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+europa.eu,whois,saved_benchmark,ok,1,0,0,0,0,0,0,0,1,0,0,0,0,0,
+europa.eu,ssl_inspection,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,1,0,0,0,0,
+europa.eu,ipwhois,saved_benchmark,ok,1,0,0,0,0,0,0,0,0,0,0,0,1,0,
+europa.eu,port_scan,saved_benchmark,ok,2,0,0,0,0,0,0,0,0,0,0,2,0,0,
+europa.eu,tech_fingerprint,saved_benchmark,ok,3,0,0,0,0,0,0,0,0,0,3,0,0,0,
+europa.eu,duckduckgo,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+europa.eu,bing,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Not used for final website match
+europa.eu,google,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+europa.eu,wikidata,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No authoritative social handles found
+europa.eu,theharvester,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Timed out after 60s
+europa.eu,recon_ng,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+europa.eu,hunter,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,No matching emails found on public Hunter page | HTTP 401 from Hunter API
+europa.eu,phonebook_cz,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Unexpected HTML response from Phonebook.cz
+europa.eu,github_code,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Requires authentication
+europa.eu,github_repos,saved_benchmark,error,10,0,0,0,0,10,0,0,0,0,0,0,0,1,HTTP 403 from GitHub repo search
+europa.eu,hibp,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,2,HTTP 401 from HIBP domain lookup | HTTP 401 from HIBP unified search
+europa.eu,hackertarget,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching hosts returned
+europa.eu,dehashed,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Public DeHashed hint found but no results without authentication
+europa.eu,brave,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found in Brave results
+europa.eu,bufferoverun,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 403 from BufferOverrun
+europa.eu,censys,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+europa.eu,projectdiscovery,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+europa.eu,rapiddns,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching subdomains returned
+europa.eu,rocketreach,saved_keyed_rerun,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching emails found
+europa.eu,subdomaincenter,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+europa.eu,subdomainfinderc99,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+europa.eu,thc,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+europa.eu,threatminer,saved_benchmark,error,0,0,0,0,0,0,0,0,0,0,0,0,0,1,HTTP 500 from ThreatMiner
+europa.eu,urlscan,saved_benchmark,ok,0,0,0,0,0,0,0,0,0,0,0,0,0,1,No matching results returned
+europa.eu,windvane,saved_benchmark,not_tested_in_saved_benchmark,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

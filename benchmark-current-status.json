@@ -1,0 +1,9 @@
+{
+  "completed": true,
+  "generated_at": "2026-03-20T07:17:24.231768+00:00",
+  "json": "c:\\Users\\tmoscaliuc\\Downloads\\osint-recon1\\osint-recon\\benchmark-provider-results-current-2026-03-20T07-13-07Z.json",
+  "long_csv": "c:\\Users\\tmoscaliuc\\Downloads\\osint-recon1\\osint-recon\\provider-hits-by-domain-current-2026-03-20T07-13-07Z.csv",
+  "wide_csv": "c:\\Users\\tmoscaliuc\\Downloads\\osint-recon1\\osint-recon\\provider-hits-by-domain-current-2026-03-20T07-13-07Z-wide.csv",
+  "domains": 50,
+  "providers": 32
+}

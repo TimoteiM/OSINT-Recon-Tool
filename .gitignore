@@ -1,0 +1,14 @@
+node_modules
+dist
+.env
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+.venv
+__pycache__/
+.qodo/
+.codex-*.log
+.codex-*.err
+.codex-*.out.log
+.codex-*.err.log

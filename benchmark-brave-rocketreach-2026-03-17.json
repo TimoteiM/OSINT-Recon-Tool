@@ -1,0 +1,760 @@
+{
+  "brave": [
+    {
+      "domain": "openai.com",
+      "emails": 6,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "microsoft.com",
+      "emails": 5,
+      "mentions": 4,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "google.com",
+      "emails": 5,
+      "mentions": 8,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "amazon.com",
+      "emails": 7,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "apple.com",
+      "emails": 6,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "meta.com",
+      "emails": 2,
+      "mentions": 5,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "netflix.com",
+      "emails": 5,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "adobe.com",
+      "emails": 10,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "cloudflare.com",
+      "emails": 8,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "salesforce.com",
+      "emails": 11,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "oracle.com",
+      "emails": 8,
+      "mentions": 8,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "ibm.com",
+      "emails": 5,
+      "mentions": 6,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "intel.com",
+      "emails": 5,
+      "mentions": 9,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "amd.com",
+      "emails": 7,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "nvidia.com",
+      "emails": 9,
+      "mentions": 3,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "cisco.com",
+      "emails": 7,
+      "mentions": 9,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "zoom.us",
+      "emails": 6,
+      "mentions": 8,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "slack.com",
+      "emails": 1,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "atlassian.com",
+      "emails": 6,
+      "mentions": 9,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "shopify.com",
+      "emails": 3,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "paypal.com",
+      "emails": 8,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "stripe.com",
+      "emails": 7,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "visa.com",
+      "emails": 6,
+      "mentions": 7,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "mastercard.com",
+      "emails": 13,
+      "mentions": 4,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "jpmorganchase.com",
+      "emails": 2,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "goldmansachs.com",
+      "emails": 8,
+      "mentions": 9,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "walmart.com",
+      "emails": 9,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "target.com",
+      "emails": 11,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "costco.com",
+      "emails": 5,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "ikea.com",
+      "emails": 4,
+      "mentions": 9,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "booking.com",
+      "emails": 2,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "airbnb.com",
+      "emails": 12,
+      "mentions": 5,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "uber.com",
+      "emails": 7,
+      "mentions": 8,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "lyft.com",
+      "emails": 9,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "delta.com",
+      "emails": 9,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "hilton.com",
+      "emails": 12,
+      "mentions": 9,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "coca-colacompany.com",
+      "emails": 0,
+      "mentions": 0,
+      "notes": [
+        "No matching emails found in Brave results"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "pepsico.com",
+      "emails": 11,
+      "mentions": 4,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "pfizer.com",
+      "emails": 3,
+      "mentions": 8,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "moderna.com",
+      "emails": 1,
+      "mentions": 0,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "siemens.com",
+      "emails": 12,
+      "mentions": 3,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "samsung.com",
+      "emails": 11,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "sony.com",
+      "emails": 5,
+      "mentions": 6,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "bbc.com",
+      "emails": 8,
+      "mentions": 5,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "nytimes.com",
+      "emails": 10,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "reuters.com",
+      "emails": 3,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "t-mobile.com",
+      "emails": 6,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "vodafone.com",
+      "emails": 6,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "nasa.gov",
+      "emails": 13,
+      "mentions": 10,
+      "notes": [],
+      "status": "ok"
+    },
+    {
+      "domain": "europa.eu",
+      "emails": 0,
+      "mentions": 10,
+      "notes": [
+        "No matching emails found in Brave results"
+      ],
+      "status": "ok"
+    }
+  ],
+  "rocketreach": [
+    {
+      "domain": "openai.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "microsoft.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "google.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "amazon.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "apple.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "meta.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "netflix.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "adobe.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "cloudflare.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "salesforce.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "oracle.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "ibm.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "intel.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "amd.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "nvidia.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "cisco.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "zoom.us",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "slack.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "atlassian.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "shopify.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "paypal.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "stripe.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "visa.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "mastercard.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "jpmorganchase.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "goldmansachs.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "walmart.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "target.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "costco.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "ikea.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "booking.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "airbnb.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "uber.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "lyft.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "delta.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "hilton.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "coca-colacompany.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "pepsico.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "pfizer.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "moderna.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "siemens.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "samsung.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "sony.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "bbc.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "nytimes.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "reuters.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "t-mobile.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "vodafone.com",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "nasa.gov",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    },
+    {
+      "domain": "europa.eu",
+      "emails": 0,
+      "notes": [
+        "No matching emails found"
+      ],
+      "status": "ok"
+    }
+  ]
+}
