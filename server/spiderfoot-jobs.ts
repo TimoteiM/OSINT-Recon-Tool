@@ -584,7 +584,9 @@ async function applySpiderfootModuleOptions(
 
   const token = typeof (payload[1] as Record<string, unknown>).token === "string"
     ? (payload[1] as Record<string, unknown>).token
-    : "";
+    : typeof (payload[1] as Record<string, unknown>).token === "number"
+      ? String((payload[1] as Record<string, unknown>).token)
+      : "";
   if (!token) {
     throw new Error("SpiderFoot optsraw did not return a token");
   }

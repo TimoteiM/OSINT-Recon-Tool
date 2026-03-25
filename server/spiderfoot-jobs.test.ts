@@ -245,6 +245,40 @@ test("SpiderFoot Deep falls back to HunterIO env key when Hunter_API_KEY is miss
   ]);
 });
 
+test("SpiderFoot Deep accepts numeric optsraw tokens from the live SpiderFoot API", async () => {
+  let savedToken = "";
+
+  await startSpiderfootJob({
+    companyName: "numeric-token.metrorex.ro",
+    providerId: "spiderfoot_deep",
+    env: {
+      ...process.env,
+      Hunter_API_KEY: "hunter-key",
+    },
+    ensureService: async () => {},
+    transport: {
+      async postJson(path, params) {
+        if (path === "/savesettingsraw") {
+          savedToken = String(params?.token || "");
+          return ["SUCCESS", "OK"];
+        }
+        if (path === "/startscan") {
+          return ["SUCCESS", "scan-numeric-token"];
+        }
+        throw new Error(`Unhandled POST ${path}`);
+      },
+      async getJson(path) {
+        if (path === "/scanlist") return [];
+        if (path === "/optsraw") return ["SUCCESS", { token: 45768763, data: {} }];
+        throw new Error(`Unhandled GET ${path}`);
+      },
+    },
+    schedulePolling: false,
+  });
+
+  assert.equal(savedToken, "45768763");
+});
+
 test("lightweight SpiderFoot does not apply deep authenticated module options", async () => {
   let optionCalls = 0;
 
