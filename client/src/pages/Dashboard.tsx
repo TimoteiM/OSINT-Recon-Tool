@@ -1337,8 +1337,8 @@ function ProvidersPanel({ providerResults }: { providerResults: Record<string, P
                 <p className="text-[var(--color-text-faint)] text-sm font-mono">No exact findings captured for this provider.</p>
               ) : (
                 <div className="space-y-4">
-                  {sections.map((section) => (
-                    <div key={section.label}>
+                  {sections.map((section, sectionIndex) => (
+                    <div key={`${section.label}-${sectionIndex}`}>
                       <p className="text-xs text-[var(--color-text-faint)] font-mono uppercase tracking-widest mb-2">{section.label}</p>
                       {section.label === "Possible Impersonation" ? (
                         renderImpersonationCandidates(section.values as Array<Record<string, unknown>>) || (

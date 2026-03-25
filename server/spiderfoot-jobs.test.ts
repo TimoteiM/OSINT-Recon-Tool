@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import http from "node:http";
 import test from "node:test";
 
 import { getSpiderfootJob, pollSpiderfootJob, startSpiderfootJob } from "./spiderfoot-jobs";
@@ -277,6 +278,69 @@ test("SpiderFoot Deep accepts numeric optsraw tokens from the live SpiderFoot AP
   });
 
   assert.equal(savedToken, "45768763");
+});
+
+test("SpiderFoot Deep preserves the SpiderFoot session cookie across optsraw and savesettingsraw", async () => {
+  let sawCookieOnSave = false;
+
+  const server = http.createServer((req, res) => {
+    const url = new URL(req.url || "/", "http://127.0.0.1");
+    if (req.method === "GET" && url.pathname === "/scanlist") {
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify([]));
+      return;
+    }
+
+    if (req.method === "GET" && url.pathname === "/optsraw") {
+      res.writeHead(200, {
+        "Content-Type": "application/json",
+        "Set-Cookie": "spiderfoot=test-session; Path=/",
+      });
+      res.end(JSON.stringify(["SUCCESS", { token: 49866519, data: {} }]));
+      return;
+    }
+
+    if (req.method === "POST" && url.pathname === "/savesettingsraw") {
+      sawCookieOnSave = String(req.headers.cookie || "").includes("spiderfoot=test-session");
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify(sawCookieOnSave
+        ? ["SUCCESS", "OK"]
+        : ["ERROR", "Invalid token (49866519)."]));
+      return;
+    }
+
+    if (req.method === "POST" && url.pathname === "/startscan") {
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify(["SUCCESS", "scan-cookie-aware"]));
+      return;
+    }
+
+    res.writeHead(404, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(["ERROR", "Not found"]));
+  });
+
+  await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const address = server.address();
+  assert.ok(address && typeof address === "object");
+
+  try {
+    const job = await startSpiderfootJob({
+      companyName: "cookie.metrorex.ro",
+      providerId: "spiderfoot_deep",
+      env: {
+        ...process.env,
+        SPIDERFOOT_API_BASE_URL: `http://127.0.0.1:${address.port}`,
+        Hunter_API_KEY: "hunter-key",
+      },
+      ensureService: async () => {},
+      schedulePolling: false,
+    });
+
+    assert.equal(job.scan_id, "scan-cookie-aware");
+    assert.equal(sawCookieOnSave, true);
+  } finally {
+    await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
+  }
 });
 
 test("lightweight SpiderFoot does not apply deep authenticated module options", async () => {

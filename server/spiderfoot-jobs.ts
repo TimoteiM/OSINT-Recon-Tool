@@ -739,6 +739,26 @@ function buildQuery(params?: Record<string, unknown>): string {
 }
 
 function createHttpTransport(baseUrl: string): SpiderfootTransport {
+  let cookieHeader = "";
+
+  function captureCookies(response: Response): void {
+    const headerBag = response.headers as Headers & { getSetCookie?: () => string[] };
+    const setCookies = typeof headerBag.getSetCookie === "function"
+      ? headerBag.getSetCookie()
+      : (() => {
+          const singleHeader = response.headers.get("set-cookie");
+          return singleHeader ? [singleHeader] : [];
+        })();
+
+    const cookies = setCookies
+      .map((value) => value.split(";")[0]?.trim())
+      .filter(Boolean);
+
+    if (cookies.length > 0) {
+      cookieHeader = cookies.join("; ");
+    }
+  }
+
   return {
     async postJson(requestPath, params = {}) {
       const body = new URLSearchParams();
@@ -751,9 +771,11 @@ function createHttpTransport(baseUrl: string): SpiderfootTransport {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/x-www-form-urlencoded",
+          ...(cookieHeader ? { Cookie: cookieHeader } : {}),
         },
         body,
       });
+      captureCookies(response);
       if (!response.ok) {
         throw new Error(`SpiderFoot API ${requestPath} failed with ${response.status}`);
       }
@@ -761,8 +783,12 @@ function createHttpTransport(baseUrl: string): SpiderfootTransport {
     },
     async getJson(requestPath, params = {}) {
       const response = await fetch(`${baseUrl}${requestPath}${buildQuery(params)}`, {
-        headers: { Accept: "application/json" },
+        headers: {
+          Accept: "application/json",
+          ...(cookieHeader ? { Cookie: cookieHeader } : {}),
+        },
       });
+      captureCookies(response);
       if (!response.ok) {
         throw new Error(`SpiderFoot API ${requestPath} failed with ${response.status}`);
       }
